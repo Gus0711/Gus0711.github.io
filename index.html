@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio Professionnel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #333;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        
+        .contact-links a:hover {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Votre Nom</h1>
+        <p>Développeur Web | Designer | Créatif</p>
+    </header>
+    
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Bienvenue sur mon portfolio ! Je suis passionné(e) par le développement web et la création d'expériences digitales exceptionnelles. Avec X années d'expérience, je transforme des idées en solutions concrètes et élégantes.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Mes Projets</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Projet 1</h3>
+                <p>Description de votre premier projet. Expliquez les technologies utilisées et les défis relevés.</p>
+            </div>
+            <div class="project-card">
+                <h3>Projet 2</h3>
+                <p>Description de votre deuxième projet. Mettez en avant vos réalisations et résultats.</p>
+            </div>
+            <div class="project-card">
+                <h3>Projet 3</h3>
+                <p>Description de votre troisième projet. Détaillez votre approche et les solutions apportées.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Mes Compétences</h2>
+        <div class="skills">
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">PHP</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">Git</span>
+            <span class="skill">Responsive Design</span>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Intéressé(e) par une collaboration ? N'hésitez pas à me contacter !</p>
+    </section>
+    
+    <footer>
+        <div class="contact-links">
+            <a href="mailto:votre@email.com">Email</a>
+            <a href="https://github.com/votreusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a>
+        </div>
+        <p style="margin-top: 20px;">© 2025 Votre Nom. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+```
+
+4. Cliquez sur **"Commit new file"**
+
+---
+
+## Étape 4 : Voir votre portfolio en ligne
+
+Attendez 1-2 minutes, puis allez sur :
+```
+https://votreusername.github.io
