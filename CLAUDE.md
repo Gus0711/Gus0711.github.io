@@ -4,28 +4,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a GitHub Pages portfolio website (Gus0711.github.io) - a static HTML portfolio site with embedded CSS. The site is hosted directly from the repository via GitHub Pages.
+This is a GitHub Pages portfolio website (Gus0711.github.io) - a professional portfolio for a GTB (Building Management System) engineer with 9+ years of experience. The site showcases real projects from 2016-2024 including public lighting modernization (3600+ points), hospital supervision with 500 LoRa valves, and public contracts.
 
 ## Architecture
 
-**Single-Page Static Site**: The entire portfolio is contained in a single `index.html` file with inline CSS styles. The site uses:
-- Semantic HTML5 structure
-- CSS Grid for project card layout
-- Flexbox for skills badges
-- Sticky navigation
-- Gradient backgrounds (linear-gradient for header)
-- Smooth hover transitions on interactive elements
+**Multi-Page Professional Portfolio**: The portfolio consists of 4 main pages with external CSS and JavaScript:
+- `index.html` - Homepage with hero, about, services, timeline (career/education)
+- `skills.html` - Detailed technical skills organized by categories
+- `projects.html` - Project library with 6 real projects (2016-2024) and filter system
+- `contact.html` - Contact form with FAQ
 
-**Language**: The site is in French (lang="fr")
+**Technologies**: HTML5, CSS3 (external stylesheet), JavaScript (for interactivity)
 
-**Layout Sections**:
-1. Header with gradient background
-2. Sticky navigation bar
-3. About section (#about)
-4. Projects section (#projects) - grid-based card layout
-5. Skills section (#skills) - flexbox badge layout
-6. Contact section (#contact)
-7. Footer with social links
+**Key Features**:
+- Responsive design (mobile, tablet, desktop)
+- CSS Grid and Flexbox layouts
+- Project filtering system (GTB, IoT, LoRaWAN, Public Contracts, Dev)
+- Timeline component for career history
+- Real professional experience integrated from LinkedIn
+
+**Language**: French (lang="fr")
+
+**Real Projects Featured**:
+1. Public Lighting Modernization (2021-2023) - 3600 light points, 7 subcontractors
+2. Hospital CVC Supervision (2023) - 500 LoRa thermostatic valves
+3. Multi-tenant Supervision Platform (2023) - SaaS for clients
+4. Public Contracts Aisne & 4 Hospitals (2024) - Niagara hypervisor + LNS LoRa
+5. Wireless IoT Solutions (2016-2022) - Temperature, COV sensors
+6. PLC Programming & Commissioning (2016-2022) - Trend, Distech, Siemens
+
+**Technologies Featured**: Niagara N4, Distech Controls, Trend, Siemens, LoRaWAN, MQTT, BACnet, Modbus, Proxmox, Docker, Home Assistant
 
 ## Development
 
