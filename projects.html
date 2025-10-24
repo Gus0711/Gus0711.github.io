@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bibliothèque de projets GTB, IoT et automatisme - Réalisations techniques">
+    <title>Projets - Portfolio GTB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">GTB Engineering</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="skills.html" class="nav-link">Compétences</a></li>
+                <li><a href="projects.html" class="nav-link active">Projets</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Bibliothèque de Projets</h1>
+            <p>Réalisations techniques en GTB, IoT et automatisme</p>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="projects-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="gtb">GTB / Supervision</button>
+                <button class="filter-btn" data-filter="iot">IoT / LoRaWAN</button>
+                <button class="filter-btn" data-filter="dev">Développement</button>
+                <button class="filter-btn" data-filter="consulting">Consulting</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid-large">
+
+                <!-- Projet 1: Intégration LoRaWAN -->
+                <article class="project-card-large" data-category="iot">
+                    <div class="project-badge">IoT / LoRaWAN</div>
+                    <div class="project-icon-large">📡</div>
+                    <h3>Déploiement Réseau LoRaWAN Multi-Sites</h3>
+                    <p class="project-summary">
+                        Conception et déploiement d'une infrastructure LoRaWAN complète avec gateways Milesight UG67
+                        et intégration de capteurs environnementaux pour le monitoring de bâtiments tertiaires.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Déployer un réseau LoRa privé couvrant plusieurs sites distants</li>
+                            <li>Intégrer des capteurs de température, humidité, CO2 et présence</li>
+                            <li>Centraliser les données via ChirpStack et MQTT</li>
+                            <li>Créer des interfaces de monitoring en temps réel</li>
+                        </ul>
+
+                        <h4>⚙️ Technologies & Réalisations</h4>
+                        <ul>
+                            <li><strong>Infrastructure:</strong> ChirpStack v4, gateways Milesight UG67</li>
+                            <li><strong>Capteurs:</strong> Thermostats Vicki LoRa, capteurs Enless (T°, HR, CO2)</li>
+                            <li><strong>Communication:</strong> MQTT broker, intégration topics wildcards</li>
+                            <li><strong>Développement:</strong> Codecs JavaScript personnalisés pour décodage des payloads</li>
+                            <li><strong>Intégration:</strong> Connexion au BMS Niagara via MQTT bridge</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>Couverture réseau LoRa optimisée avec RSSI > -110 dBm</li>
+                            <li>120+ capteurs déployés sur 5 sites</li>
+                            <li>Taux de réception messages > 98%</li>
+                            <li>Autonomie capteurs 5+ ans (batteries)</li>
+                            <li>Intégration complète dans système GTB existant</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">ChirpStack</span>
+                            <span class="tech-tag">LoRaWAN</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Milesight</span>
+                            <span class="tech-tag">Niagara</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 2: Système de Supervision GTB -->
+                <article class="project-card-large" data-category="gtb">
+                    <div class="project-badge">GTB / Supervision</div>
+                    <div class="project-icon-large">🏢</div>
+                    <h3>Système de Supervision GTB Complexe</h3>
+                    <p class="project-summary">
+                        Développement d'une solution de supervision complète sur Niagara Framework pour un ensemble
+                        de bâtiments tertiaires avec CVC, éclairage et gestion énergétique.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Centraliser la supervision de 8 bâtiments (50 000 m²)</li>
+                            <li>Optimiser la gestion CVC et réduire les consommations</li>
+                            <li>Créer des interfaces graphiques intuitives pour l'exploitation</li>
+                            <li>Mettre en place des alertes et rapports automatisés</li>
+                        </ul>
+
+                        <h4>⚙️ Technologies & Réalisations</h4>
+                        <ul>
+                            <li><strong>Plateforme:</strong> Niagara Framework 4.x (programmation Java)</li>
+                            <li><strong>Protocoles:</strong> BACnet/IP, Modbus TCP, MQTT</li>
+                            <li><strong>HMI:</strong> Création de 40+ symboles animés (moteurs, vannes, équipements)</li>
+                            <li><strong>Logiques:</strong> Programmes de séquençage CVC complexes</li>
+                            <li><strong>Optimisation:</strong> Stratégies free-cooling, délestage, programmation horaire</li>
+                            <li><strong>Reporting:</strong> Tableaux de bord énergétiques et KPIs</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>1500+ points de données supervisés en temps réel</li>
+                            <li>Réduction de 18% des consommations énergétiques (année 1)</li>
+                            <li>Temps d'intervention maintenance réduit de 40%</li>
+                            <li>Interface graphique intuitive appréciée des exploitants</li>
+                            <li>ROI atteint en moins de 2 ans</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Niagara</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">BACnet</span>
+                            <span class="tech-tag">Modbus</span>
+                            <span class="tech-tag">CVC</span>
+                            <span class="tech-tag">Optimisation</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 3: Codecs LoRaWAN -->
+                <article class="project-card-large" data-category="dev iot">
+                    <div class="project-badge">Développement / IoT</div>
+                    <div class="project-icon-large">💻</div>
+                    <h3>Bibliothèque de Codecs LoRaWAN</h3>
+                    <p class="project-summary">
+                        Développement d'une collection de codecs JavaScript pour le décodage et l'encodage de
+                        payloads LoRaWAN de différents fabricants de capteurs.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Créer des codecs réutilisables pour capteurs courants</li>
+                            <li>Standardiser le format de sortie JSON</li>
+                            <li>Gérer les différentes versions firmware des capteurs</li>
+                            <li>Faciliter l'intégration dans ChirpStack et applications tierces</li>
+                        </ul>
+
+                        <h4>⚙️ Technologies & Réalisations</h4>
+                        <ul>
+                            <li><strong>Langage:</strong> JavaScript (ES6+), TypeScript</li>
+                            <li><strong>Capteurs supportés:</strong> Vicki, Enless, Milesight, Dragino</li>
+                            <li><strong>Fonctionnalités:</strong> Décodage uplink, encodage downlink, validation</li>
+                            <li><strong>Tests:</strong> Suite de tests unitaires complète</li>
+                            <li><strong>Documentation:</strong> Exemples et guide d'intégration</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>15+ codecs développés et documentés</li>
+                            <li>Réutilisés sur tous les projets LoRa de l'entreprise</li>
+                            <li>Gain de temps: 80% sur intégration nouveaux capteurs</li>
+                            <li>Code open-source partagé avec la communauté</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">LoRaWAN</span>
+                            <span class="tech-tag">ChirpStack</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 4: Automatisation n8n -->
+                <article class="project-card-large" data-category="dev">
+                    <div class="project-badge">Développement / Automatisation</div>
+                    <div class="project-icon-large">⚙️</div>
+                    <h3>Workflows d'Automatisation BMS</h3>
+                    <p class="project-summary">
+                        Création de workflows d'automatisation avec n8n pour la gestion d'alertes, rapports
+                        et intégrations entre systèmes GTB et outils métiers.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Automatiser la génération de rapports énergétiques</li>
+                            <li>Créer des alertes intelligentes multi-canaux</li>
+                            <li>Intégrer GTB avec systèmes tiers (GMAO, ticketing)</li>
+                            <li>Centraliser les notifications et escalades</li>
+                        </ul>
+
+                        <h4>⚙️ Technologies & Réalisations</h4>
+                        <ul>
+                            <li><strong>Plateforme:</strong> n8n (self-hosted sur Proxmox)</li>
+                            <li><strong>Intégrations:</strong> MQTT, Niagara REST API, email, SMS, Slack</li>
+                            <li><strong>Workflows:</strong> 20+ workflows actifs</li>
+                            <li><strong>Données:</strong> Traitement et agrégation de time-series</li>
+                            <li><strong>Notifications:</strong> Système d'alertes intelligent avec escalades</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>Rapports hebdomadaires générés automatiquement</li>
+                            <li>Alertes critiques envoyées en < 30 secondes</li>
+                            <li>Réduction de 70% du temps de création de rapports</li>
+                            <li>Meilleure réactivité sur incidents techniques</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Proxmox</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 5: Optimisation Énergétique -->
+                <article class="project-card-large" data-category="gtb consulting">
+                    <div class="project-badge">Consulting / Optimisation</div>
+                    <div class="project-icon-large">⚡</div>
+                    <h3>Audit et Optimisation Énergétique</h3>
+                    <p class="project-summary">
+                        Mission de consulting pour l'audit énergétique d'un site industriel et mise en œuvre
+                        de stratégies d'optimisation via GTB.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Réaliser un audit énergétique complet (CVC, éclairage, process)</li>
+                            <li>Identifier les gisements d'économies</li>
+                            <li>Mettre en place un système de monitoring détaillé</li>
+                            <li>Implémenter des stratégies d'optimisation</li>
+                        </ul>
+
+                        <h4>⚙️ Réalisations</h4>
+                        <ul>
+                            <li><strong>Phase 1:</strong> Analyse des consommations sur 12 mois</li>
+                            <li><strong>Phase 2:</strong> Installation de compteurs et capteurs supplémentaires</li>
+                            <li><strong>Phase 3:</strong> Développement de tableaux de bord Grafana</li>
+                            <li><strong>Phase 4:</strong> Programmation de logiques d'optimisation GTB</li>
+                            <li><strong>Stratégies:</strong> Free-cooling, délestage, optimisation horaires, récupération chaleur</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>Réduction de 24% des consommations électriques</li>
+                            <li>Économies annuelles: 85 000 € / an</li>
+                            <li>ROI: 14 mois (avec aides CEE)</li>
+                            <li>Amélioration du confort des occupants</li>
+                            <li>Documentation complète et formation équipes</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Audit énergétique</span>
+                            <span class="tech-tag">GTB</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Optimisation</span>
+                            <span class="tech-tag">Consulting</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 6: Infrastructure Serveur -->
+                <article class="project-card-large" data-category="dev">
+                    <div class="project-badge">Infrastructure</div>
+                    <div class="project-icon-large">🖥️</div>
+                    <h3>Infrastructure Serveur BMS/IoT</h3>
+                    <p class="project-summary">
+                        Déploiement d'une infrastructure serveur complète sur Proxmox pour héberger
+                        serveurs BMS, ChirpStack, bases de données et outils d'automatisation.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Centraliser tous les services BMS et IoT</li>
+                            <li>Garantir haute disponibilité et performances</li>
+                            <li>Faciliter la maintenance et les mises à jour</li>
+                            <li>Sécuriser l'accès et les données</li>
+                        </ul>
+
+                        <h4>⚙️ Technologies & Architecture</h4>
+                        <ul>
+                            <li><strong>Hyperviseur:</strong> Proxmox VE (clustering 3 nodes)</li>
+                            <li><strong>OS:</strong> EndeavourOS (Arch Linux) pour VMs</li>
+                            <li><strong>Conteneurs:</strong> Docker, Docker Compose</li>
+                            <li><strong>Services:</strong> Niagara, ChirpStack, n8n, Grafana, PostgreSQL, TimescaleDB</li>
+                            <li><strong>Backup:</strong> Proxmox Backup Server, snapshots quotidiens</li>
+                            <li><strong>Monitoring:</strong> Prometheus, Grafana, alerting</li>
+                            <li><strong>Sécurité:</strong> Firewall, VPN, reverse proxy (Nginx)</li>
+                        </ul>
+
+                        <h4>✅ Résultats</h4>
+                        <ul>
+                            <li>Infrastructure hautement disponible (99.9% uptime)</li>
+                            <li>Déploiement simplifié de nouveaux services</li>
+                            <li>Sauvegardes automatisées et testées</li>
+                            <li>Performances optimales (faible latence)</li>
+                            <li>Documentation technique complète</li>
+                        </ul>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Proxmox</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Nginx</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Project CTA -->
+    <section class="add-project-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h3>💡 Cette bibliothèque est évolutive</h3>
+                <p>
+                    Chaque nouveau projet vient enrichir cette collection de réalisations techniques.
+                    Les descriptions détaillées servent de référence et de showcase pour de futurs clients.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Un projet similaire ?</h2>
+                <p>Discutons de votre besoin et des solutions que je peux vous apporter</p>
+                <a href="contact.html" class="btn btn-light">Démarrer un projet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GTB Engineering</h3>
+                    <p>Ingénieur en Gestion Technique du Bâtiment</p>
+                    <p>Spécialiste Automatisme, IoT & Optimisation Énergétique</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="skills.html">Compétences</a></li>
+                        <li><a href="projects.html">Projets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:contact@example.com">Email</a></li>
+                        <li><a href="https://github.com/Gus0711" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GTB Engineering Portfolio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

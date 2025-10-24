@@ -3,202 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Professionnel</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        nav {
-            background: #333;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-        }
-        
-        nav a:hover {
-            color: #667eea;
-        }
-        
-        section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        
-        h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-        
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 25px;
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .project-card h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .skill {
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        .contact-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
-        
-        .contact-links a:hover {
-            color: #667eea;
-        }
-    </style>
+    <meta name="description" content="Portfolio professionnel - Ingénieur en Gestion Technique du Bâtiment (GTB), spécialisé en automatisme, IoT/LoRaWAN et optimisation énergétique">
+    <title>Portfolio GTB - Ingénieur Automatisme & IoT</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Votre Nom</h1>
-        <p>Développeur Web | Designer | Créatif</p>
-    </header>
-    
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#skills">Compétences</a>
-        <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">GTB Engineering</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li><a href="skills.html" class="nav-link">Compétences</a></li>
+                <li><a href="projects.html" class="nav-link">Projets</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-    
-    <section id="about">
-        <h2>À propos de moi</h2>
-        <p>Bienvenue sur mon portfolio ! Je suis passionné(e) par le développement web et la création d'expériences digitales exceptionnelles. Avec X années d'expérience, je transforme des idées en solutions concrètes et élégantes.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Mes Projets</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>Projet 1</h3>
-                <p>Description de votre premier projet. Expliquez les technologies utilisées et les défis relevés.</p>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Ingénieur en Gestion Technique du Bâtiment</h1>
+                <p class="hero-subtitle">Automatisme • Supervision • Optimisation Énergétique</p>
+                <p class="hero-description">
+                    Expert en GTB/BMS et solutions IoT/LoRaWAN, je conçois et déploie des systèmes
+                    intelligents pour optimiser les performances énergétiques et le confort des bâtiments.
+                </p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">Découvrir mes projets</a>
+                    <a href="contact.html" class="btn btn-secondary">Me contacter</a>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Projet 2</h3>
-                <p>Description de votre deuxième projet. Mettez en avant vos réalisations et résultats.</p>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <div class="card-icon">🏢</div>
+                    <div class="card-content">
+                        <h3>Bâtiments Intelligents</h3>
+                        <p>Conception de solutions GTB complètes</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-icon">📡</div>
+                    <div class="card-content">
+                        <h3>IoT / LoRaWAN</h3>
+                        <p>Déploiement de réseaux de capteurs</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="card-icon">⚙️</div>
+                    <div class="card-content">
+                        <h3>Automatisme</h3>
+                        <p>Programmation de systèmes complexes</p>
+                    </div>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Projet 3</h3>
-                <p>Description de votre troisième projet. Détaillez votre approche et les solutions apportées.</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">À propos</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Expertise en Gestion Technique du Bâtiment</h3>
+                    <p>
+                        En tant qu'ingénieur spécialisé en GTB, je combine expertise technique et vision stratégique
+                        pour transformer les bâtiments en écosystèmes intelligents et efficaces. Mon approche intègre
+                        les dernières technologies d'automatisme, d'IoT et d'optimisation énergétique.
+                    </p>
+                    <p>
+                        De la conception à la mise en service, j'accompagne les projets dans toutes leurs phases,
+                        en apportant une expertise pointue en supervision (Niagara Framework), communication
+                        (LoRaWAN, MQTT) et développement de solutions sur-mesure.
+                    </p>
+
+                    <div class="specialties">
+                        <div class="specialty-item">
+                            <span class="specialty-icon">🎯</span>
+                            <div>
+                                <h4>Automatisme & Supervision</h4>
+                                <p>Programmation et déploiement de systèmes GTB/BMS performants</p>
+                            </div>
+                        </div>
+                        <div class="specialty-item">
+                            <span class="specialty-icon">🌐</span>
+                            <div>
+                                <h4>IoT & Communication</h4>
+                                <p>Architecture LoRaWAN, MQTT et intégration multi-protocoles</p>
+                            </div>
+                        </div>
+                        <div class="specialty-item">
+                            <span class="specialty-icon">💻</span>
+                            <div>
+                                <h4>Développement</h4>
+                                <p>Java, JavaScript, Python pour solutions BMS personnalisées</p>
+                            </div>
+                        </div>
+                        <div class="specialty-item">
+                            <span class="specialty-icon">⚡</span>
+                            <div>
+                                <h4>Optimisation Énergétique</h4>
+                                <p>Analyse, monitoring et réduction des consommations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏗️</div>
+                        <div class="stat-number">GTB/BMS</div>
+                        <div class="stat-label">Niagara Framework<br>OpenBMS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📡</div>
+                        <div class="stat-number">IoT</div>
+                        <div class="stat-label">LoRaWAN<br>ChirpStack</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💾</div>
+                        <div class="stat-number">Dev</div>
+                        <div class="stat-label">Java • JS<br>Python</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section id="skills">
-        <h2>Mes Compétences</h2>
-        <div class="skills">
-            <span class="skill">HTML5</span>
-            <span class="skill">CSS3</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">React</span>
-            <span class="skill">PHP</span>
-            <span class="skill">WordPress</span>
-            <span class="skill">Git</span>
-            <span class="skill">Responsive Design</span>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services & Consulting</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Gestion Technique du Bâtiment</h3>
+                    <ul>
+                        <li>Conception et programmation de systèmes GTB/BMS</li>
+                        <li>Supervision CVC (Climatisation, Ventilation, Chauffage)</li>
+                        <li>Mise en service et commissioning</li>
+                        <li>Optimisation énergétique et suivi des consommations</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>Solutions IoT & Monitoring</h3>
+                    <ul>
+                        <li>Déploiement de réseaux LoRaWAN</li>
+                        <li>Intégration de capteurs multi-protocoles</li>
+                        <li>Architecture MQTT et gestion de données</li>
+                        <li>Développement de codecs de décodage personnalisés</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Développement & Intégration</h3>
+                    <ul>
+                        <li>Programmation Niagara (Java)</li>
+                        <li>Scripts d'automatisation (JavaScript, Python)</li>
+                        <li>Création de symboles animés pour interfaces</li>
+                        <li>Infrastructure serveur (Proxmox, Linux)</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Consulting Technique</h3>
+                    <ul>
+                        <li>Assistance à maîtrise d'ouvrage</li>
+                        <li>Rédaction de consultations techniques</li>
+                        <li>Conseil en optimisation énergétique</li>
+                        <li>Support technique et maintenance</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Intéressé(e) par une collaboration ? N'hésitez pas à me contacter !</p>
-    </section>
-    
-    <footer>
-        <div class="contact-links">
-            <a href="mailto:votre@email.com">Email</a>
-            <a href="https://github.com/votreusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Un projet GTB ou IoT en vue ?</h2>
+                <p>Discutons de votre projet et des solutions techniques adaptées à vos besoins</p>
+                <a href="contact.html" class="btn btn-light">Prendre contact</a>
+            </div>
         </div>
-        <p style="margin-top: 20px;">© 2025 Votre Nom. Tous droits réservés.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GTB Engineering</h3>
+                    <p>Ingénieur en Gestion Technique du Bâtiment</p>
+                    <p>Spécialiste Automatisme, IoT & Optimisation Énergétique</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="skills.html">Compétences</a></li>
+                        <li><a href="projects.html">Projets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:contact@example.com">Email</a></li>
+                        <li><a href="https://github.com/Gus0711" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GTB Engineering Portfolio. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-```
-
-4. Cliquez sur **"Commit new file"**
-
----
-
-## Étape 4 : Voir votre portfolio en ligne
-
-Attendez 1-2 minutes, puis allez sur :
-```
-https://votreusername.github.io

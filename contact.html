@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact - Ingénieur GTB disponible pour projets et consulting">
+    <title>Contact - Portfolio GTB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">GTB Engineering</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="skills.html" class="nav-link">Compétences</a></li>
+                <li><a href="projects.html" class="nav-link">Projets</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Me Contacter</h1>
+            <p>Discutons de votre projet GTB, IoT ou automatisme</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Parlons de votre projet</h2>
+                    <p class="contact-intro">
+                        Je suis disponible pour des missions de consulting, du développement de solutions GTB/IoT,
+                        ou pour discuter de vos besoins en automatisme et optimisation énergétique.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <div class="method-content">
+                                <h3>Email</h3>
+                                <a href="mailto:contact@example.com">contact@example.com</a>
+                                <p>Réponse sous 24h ouvrées</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">💼</div>
+                            <div class="method-content">
+                                <h3>LinkedIn</h3>
+                                <a href="https://linkedin.com/in/votreprofil" target="_blank">Voir mon profil</a>
+                                <p>Restons connectés professionnellement</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">💻</div>
+                            <div class="method-content">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/Gus0711" target="_blank">@Gus0711</a>
+                                <p>Projets open-source et contributions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="availability">
+                        <h3>📅 Disponibilité</h3>
+                        <p>Actuellement disponible pour de nouvelles missions et projets.</p>
+                        <ul>
+                            <li>Consulting technique</li>
+                            <li>Développement GTB/IoT</li>
+                            <li>Formation et accompagnement</li>
+                            <li>Audit et optimisation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Formulaire de contact</h3>
+                        <p class="form-description">Remplissez ce formulaire et je vous répondrai rapidement</p>
+
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required placeholder="Jean Dupont">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="jean.dupont@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" name="company" placeholder="Nom de votre entreprise">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Type de projet *</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="gtb">GTB / Supervision</option>
+                                <option value="iot">IoT / LoRaWAN</option>
+                                <option value="optimisation">Optimisation énergétique</option>
+                                <option value="consulting">Consulting technique</option>
+                                <option value="developpement">Développement sur-mesure</option>
+                                <option value="formation">Formation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget estimé</label>
+                            <select id="budget" name="budget">
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="<10k">Moins de 10 000 €</option>
+                                <option value="10-25k">10 000 - 25 000 €</option>
+                                <option value="25-50k">25 000 - 50 000 €</option>
+                                <option value="50-100k">50 000 - 100 000 €</option>
+                                <option value=">100k">Plus de 100 000 €</option>
+                                <option value="autre">À définir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required
+                                placeholder="Décrivez votre projet, vos besoins, vos contraintes..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
+                                <span>J'accepte que mes données soient utilisées pour me recontacter concernant ma demande *</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Envoyer ma demande
+                        </button>
+
+                        <p class="form-note">* Champs obligatoires</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Recap -->
+    <section class="expertise-recap">
+        <div class="container">
+            <h2>Domaines d'intervention</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <span class="expertise-icon">🏢</span>
+                    <h3>GTB / BMS</h3>
+                    <p>Niagara, OpenBMS, supervision CVC</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-icon">📡</span>
+                    <h3>IoT / LoRaWAN</h3>
+                    <p>ChirpStack, capteurs, MQTT</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-icon">⚡</span>
+                    <h3>Optimisation</h3>
+                    <p>Efficacité énergétique, monitoring</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-icon">💻</span>
+                    <h3>Développement</h3>
+                    <p>Java, JavaScript, Python</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-icon">💼</span>
+                    <h3>Consulting</h3>
+                    <p>Audit, conseil, AMO</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="expertise-icon">🎓</span>
+                    <h3>Formation</h3>
+                    <p>Transfert de compétences, support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>💼 Quel est votre mode d'intervention ?</h3>
+                    <p>
+                        Je peux intervenir en régie (sur site ou remote), en forfait pour des projets définis,
+                        ou en mode consulting pour de l'expertise ponctuelle. Je m'adapte à vos besoins.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>🌍 Quelle est votre zone géographique ?</h3>
+                    <p>
+                        Basé en France, j'interviens principalement en Île-de-France et régions limitrophes.
+                        Pour des missions plus longues ou des projets d'envergure, je peux me déplacer nationalement.
+                        Le travail en remote est également possible pour certaines prestations.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>⏱️ Quels sont vos délais d'intervention ?</h3>
+                    <p>
+                        Cela dépend de ma charge actuelle et de l'urgence de votre besoin. Pour une mission standard,
+                        comptez 2-4 semaines. Pour des interventions urgentes (dépannage, support), je peux être
+                        disponible sous 48-72h.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>💰 Comment sont facturées vos prestations ?</h3>
+                    <p>
+                        Selon le type de mission : TJM (Taux Journalier Moyen) pour les missions en régie,
+                        forfait pour les projets définis, ou tarif horaire pour du conseil ponctuel.
+                        Un devis détaillé vous sera fourni après étude de votre besoin.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>🔧 Proposez-vous du support après projet ?</h3>
+                    <p>
+                        Oui, je propose systématiquement une période de garantie après mise en service, ainsi que
+                        des contrats de maintenance et support adaptés à vos besoins (hotline, interventions planifiées,
+                        évolutions).
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>🎓 Faites-vous de la formation ?</h3>
+                    <p>
+                        Absolument ! Je propose des formations sur-mesure pour vos équipes : prise en main GTB,
+                        programmation Niagara, architecture LoRaWAN, bonnes pratiques d'exploitation, etc.
+                        Les formations peuvent être théoriques ou pratiques, sur site ou à distance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GTB Engineering</h3>
+                    <p>Ingénieur en Gestion Technique du Bâtiment</p>
+                    <p>Spécialiste Automatisme, IoT & Optimisation Énergétique</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="skills.html">Compétences</a></li>
+                        <li><a href="projects.html">Projets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:contact@example.com">Email</a></li>
+                        <li><a href="https://github.com/Gus0711" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GTB Engineering Portfolio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
