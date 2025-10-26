@@ -7,7 +7,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     initNavbar();
     initMobileMenu();
+    initThemeSwitcher();
     initProjectFilters();
+    initProjectModal();
     initContactForm();
     initScrollAnimations();
     initParticlesBackground();
@@ -57,10 +59,418 @@ function initMobileMenu() {
     }
 }
 
+// === Theme Switcher ===
+function initThemeSwitcher() {
+    const themeSwitcher = document.querySelector('.theme-switcher');
+    const styleLink = document.getElementById('theme-style');
+
+    if (!themeSwitcher || !styleLink) return;
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'v3';
+    applyTheme(savedTheme);
+
+    // Switch theme on button click
+    themeSwitcher.addEventListener('click', function() {
+        const currentTheme = styleLink.getAttribute('href').includes('v1') ? 'v1' : 'v3';
+        const newTheme = currentTheme === 'v3' ? 'v1' : 'v3';
+
+        applyTheme(newTheme);
+        localStorage.setItem('portfolio-theme', newTheme);
+
+        // Show notification
+        const themeName = newTheme === 'v1' ? 'Dark Glassmorphism' : 'Light Corporate';
+        showNotification(`Thème changé: ${themeName}`, 'success');
+    });
+
+    function applyTheme(theme) {
+        const cssFile = theme === 'v1' ? 'styles-v1-glassmorphism.css' : 'styles.css';
+        styleLink.setAttribute('href', cssFile);
+
+        // Update button text/icon
+        themeSwitcher.innerHTML = theme === 'v1'
+            ? '☀️ <span class="theme-text">Light</span>'
+            : '🌙 <span class="theme-text">Dark</span>';
+
+        // Add transition class
+        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    }
+}
+
+// === Project Modal System ===
+function initProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (!modal) return;
+
+    const modalContent = document.getElementById('modalContent');
+    const closeBtn = modal.querySelector('.modal-close');
+    const overlay = modal.querySelector('.modal-overlay');
+    const prevBtn = modal.querySelector('.modal-prev');
+    const nextBtn = modal.querySelector('.modal-next');
+    const viewButtons = document.querySelectorAll('.btn-view-project');
+
+    let currentProjectId = null;
+
+    // Project data with full details
+    const projectsData = {
+        1: {
+            id: 1,
+            icon: '🌐',
+            badge: 'En cours',
+            title: 'Plateforme de Supervision Mutualisée',
+            period: '2023 - En cours',
+            client: 'Multi-clients GTB',
+            category: ['gtb', 'dev', 'iot'],
+            excerpt: 'Hébergement cloud multi-tenant avec LNS LoRaWAN mutualisé pour clients GTB',
+            description: `
+                <p>Développement d'une plateforme cloud complète permettant d'héberger plusieurs clients GTB avec des supervisions isolées mais partageant une infrastructure LoRaWAN commune.</p>
+            `,
+            objectives: [
+                'Créer une architecture multi-tenant sécurisée',
+                'Mutualiser le LNS LoRaWAN (ChirpStack) entre clients',
+                'Automatiser le provisionnement de nouvelles instances',
+                'Garantir l\'isolation des données clients'
+            ],
+            technologies: [
+                { name: 'Niagara Framework', icon: '🏢' },
+                { name: 'ChirpStack LNS', icon: '📡' },
+                { name: 'Docker & Kubernetes', icon: '🐳' },
+                { name: 'PostgreSQL', icon: '🗄️' },
+                { name: 'MQTT', icon: '📨' },
+                { name: 'API REST', icon: '🔌' }
+            ],
+            results: [
+                '5+ clients hébergés simultanément',
+                '99.9% de disponibilité',
+                'Provisionnement en moins de 2h',
+                'Réduction des coûts infrastructure de 60%'
+            ],
+            challenges: 'Gestion de la sécurité multi-tenant, orchestration des conteneurs, monitoring centralisé, scalabilité horizontale'
+        },
+        2: {
+            id: 2,
+            icon: '🏛️',
+            badge: 'En cours',
+            title: 'Marché Public Aisne',
+            period: '2024 - 2026',
+            client: 'Collectivités territoriales',
+            category: ['marche-public', 'gtb'],
+            excerpt: 'Régulation multi-communes avec chaufferies, comptage et automatisation',
+            description: `
+                <p>Marché public d'envergure couvrant plusieurs communes de l'Aisne pour la modernisation et l'optimisation énergétique de bâtiments publics (mairies, écoles, gymnases).</p>
+            `,
+            objectives: [
+                'Remplacer les régulations obsolètes par des automates modernes',
+                'Implémenter le comptage énergétique sur tous les sites',
+                'Centraliser la supervision multi-sites',
+                'Former les équipes techniques municipales'
+            ],
+            technologies: [
+                { name: 'Automates CVC', icon: '⚙️' },
+                { name: 'BACnet/IP', icon: '🌐' },
+                { name: 'Modbus', icon: '🔗' },
+                { name: 'Supervision Web', icon: '💻' },
+                { name: 'Compteurs M-Bus', icon: '📊' }
+            ],
+            results: [
+                '25+ bâtiments équipés',
+                'Réduction énergétique estimée: 20-30%',
+                'Supervision centralisée opérationnelle',
+                'Formation de 15 agents techniques'
+            ],
+            challenges: 'Coordination entre communes, compatibilité équipements existants, formations terrain, déploiement progressif sans interruption'
+        },
+        3: {
+            id: 3,
+            icon: '🏥',
+            badge: 'En cours',
+            title: 'Supervision 5 Hôpitaux',
+            period: '2023 - 2025',
+            client: 'Groupement hospitalier',
+            category: ['gtb', 'iot'],
+            excerpt: 'Hyperviseur centralisé avec 5 supervisions personnalisées et réseau LoRa',
+            description: `
+                <p>Projet d'envergure visant à unifier la supervision technique de 5 établissements hospitaliers tout en conservant l'autonomie locale de chaque site.</p>
+            `,
+            objectives: [
+                'Déployer un hyperviseur centralisé pour vue d\'ensemble',
+                'Créer 5 supervisions personnalisées par établissement',
+                'Installer un réseau LoRaWAN sur chaque site',
+                'Intégrer capteurs IoT pour qualité d\'air et confort'
+            ],
+            technologies: [
+                { name: 'Niagara N4', icon: '🏢' },
+                { name: 'LoRaWAN Gateway', icon: '📡' },
+                { name: 'ChirpStack', icon: '🔧' },
+                { name: 'Capteurs IoT', icon: '📊' },
+                { name: 'BACnet', icon: '🌐' },
+                { name: 'SQL Database', icon: '🗄️' }
+            ],
+            results: [
+                'Hyperviseur pilotant 5 sites en temps réel',
+                '50+ passerelles LoRa déployées',
+                '200+ capteurs IoT connectés',
+                'Alertes centralisées et traçabilité complète'
+            ],
+            challenges: 'Hétérogénéité des installations existantes, contraintes réseaux sécurisés (VLAN), continuité de service 24/7, déploiement progressif'
+        },
+        4: {
+            id: 4,
+            icon: '🏥',
+            badge: 'Terminé',
+            title: '500 Vannes Thermostatiques LoRa',
+            period: '2023',
+            client: 'CHU',
+            category: ['iot', 'gtb'],
+            excerpt: 'Déploiement massif de vannes connectées avec LNS dédié dans un hôpital',
+            description: `
+                <p>Remplacement de toutes les vannes thermostatiques manuelles par des vannes connectées LoRaWAN pour un contrôle centralisé et des économies d'énergie significatives.</p>
+            `,
+            objectives: [
+                'Installer 500 vannes thermostatiques LoRa',
+                'Déployer un réseau LoRaWAN couvrant tous les bâtiments',
+                'Intégrer à la supervision existante',
+                'Optimiser le chauffage pièce par pièce'
+            ],
+            technologies: [
+                { name: 'Vannes LoRaWAN', icon: '🌡️' },
+                { name: 'LoRa Gateway', icon: '📡' },
+                { name: 'ChirpStack LNS', icon: '🔧' },
+                { name: 'MQTT Integration', icon: '📨' },
+                { name: 'Niagara', icon: '🏢' }
+            ],
+            results: [
+                '500 vannes installées et commissionnées',
+                'Couverture LoRa 100% du site',
+                'Réduction consommation chauffage: 25%',
+                'Temps d\'intervention réduit de 80%'
+            ],
+            challenges: 'Étude de couverture radio complexe, commissioning massif, intégration protocoles, gestion des batteries'
+        },
+        5: {
+            id: 5,
+            icon: '💡',
+            badge: 'Terminé',
+            title: '3600+ Automates Éclairage Public',
+            period: '2021 - 2023',
+            client: 'Métropole',
+            category: ['gtb', 'marche-public'],
+            excerpt: 'Modernisation complète avec supervision et coordination de 7 sous-traitants',
+            description: `
+                <p>Projet métropolitain de modernisation de l'éclairage public avec remplacement de plus de 3600 automates d'armoires électriques et création d'une supervision centralisée.</p>
+            `,
+            objectives: [
+                'Remplacer 3600+ automates obsolètes',
+                'Créer une supervision temps réel de l\'éclairage public',
+                'Coordonner 7 entreprises de pose',
+                'Optimiser les plages horaires et réduire la consommation'
+            ],
+            technologies: [
+                { name: 'Automates éclairage', icon: '💡' },
+                { name: 'Télégestion GSM', icon: '📱' },
+                { name: 'Supervision Web', icon: '🌐' },
+                { name: 'API REST', icon: '🔌' },
+                { name: 'Cartographie GIS', icon: '🗺️' }
+            ],
+            results: [
+                '3600+ automates remplacés',
+                '100% du réseau supervisé',
+                'Économie énergétique: 40%',
+                'Détection pannes automatique'
+            ],
+            challenges: 'Coordination multi-entreprises, déploiement sur 2 ans, maintenance du service, gestion des aléas (pannes, accès difficiles)'
+        },
+        6: {
+            id: 6,
+            icon: '📡',
+            badge: 'Terminé',
+            title: 'Solutions IoT Sans Fil',
+            period: '2016 - 2022',
+            client: 'Divers clients tertiaires',
+            category: ['iot', 'dev'],
+            excerpt: 'Développement et intégration de capteurs environnementaux sans fil',
+            description: `
+                <p>Développement de solutions IoT sur-mesure pour la mesure et le monitoring de paramètres environnementaux dans des bâtiments tertiaires.</p>
+            `,
+            objectives: [
+                'Développer des capteurs sans fil autonomes',
+                'Créer des passerelles d\'agrégation de données',
+                'Intégrer aux supervisions GTB existantes',
+                'Garantir 5+ ans d\'autonomie batterie'
+            ],
+            technologies: [
+                { name: 'LoRaWAN', icon: '📡' },
+                { name: 'Zigbee', icon: '🔗' },
+                { name: 'Capteurs environnementaux', icon: '🌡️' },
+                { name: 'MQTT', icon: '📨' },
+                { name: 'Python', icon: '🐍' },
+                { name: 'Node-RED', icon: '🔴' }
+            ],
+            results: [
+                '100+ capteurs déployés',
+                'Autonomie batterie: 7+ ans',
+                'Intégration réussie sur 10+ sites',
+                'ROI < 18 mois'
+            ],
+            challenges: 'Optimisation consommation énergétique, fiabilité transmission, intégration multi-protocoles, maintenance à distance'
+        },
+        7: {
+            id: 7,
+            icon: '⚙️',
+            badge: 'Terminé',
+            title: 'Programmation Automates CVC',
+            period: '2016 - 2022',
+            client: 'Divers clients',
+            category: ['gtb'],
+            excerpt: 'Intégration multi-marques avec mise en service et développement supervision',
+            description: `
+                <p>Prestations de programmation et mise en service d'automates CVC (Climatisation, Ventilation, Chauffage) multi-marques avec développement des interfaces de supervision associées.</p>
+            `,
+            objectives: [
+                'Programmer automates selon cahiers des charges',
+                'Assurer la mise en service et le réglage',
+                'Développer les synoptiques de supervision',
+                'Former les exploitants'
+            ],
+            technologies: [
+                { name: 'Siemens (Desigo)', icon: '🔧' },
+                { name: 'Schneider (EcoStruxure)', icon: '⚡' },
+                { name: 'Honeywell', icon: '🏢' },
+                { name: 'BACnet/Modbus', icon: '🌐' },
+                { name: 'Niagara', icon: '💻' }
+            ],
+            results: [
+                '50+ projets livrés',
+                'Multi-marques maîtrisées',
+                'Taux satisfaction: 95%+',
+                'Nombreuses références tertiaire/santé'
+            ],
+            challenges: 'Hétérogénéité des marques et protocoles, respect des délais chantiers, contraintes exploitation (interventions nocturnes/week-end)'
+        }
+    };
+
+    // Open modal
+    function openModal(projectId) {
+        currentProjectId = projectId;
+        const project = projectsData[projectId];
+        if (!project) return;
+
+        // Generate modal HTML
+        const modalHTML = `
+            <div class="modal-header">
+                <div class="modal-header-top">
+                    <div class="modal-icon">${project.icon}</div>
+                    <div class="modal-badge modal-badge-${project.badge === 'En cours' ? 'active' : 'completed'}">${project.badge}</div>
+                </div>
+                <h2>${project.title}</h2>
+                <div class="modal-meta">
+                    <span class="meta-item">📅 ${project.period}</span>
+                    <span class="meta-item">👤 ${project.client}</span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>📋 Description</h3>
+                    ${project.description}
+                    <p class="project-excerpt-large">${project.excerpt}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>🎯 Objectifs</h3>
+                    <ul class="objectives-list">
+                        ${project.objectives.map(obj => `<li>${obj}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>🛠️ Technologies utilisées</h3>
+                    <div class="tech-grid">
+                        ${project.technologies.map(tech => `
+                            <div class="tech-item">
+                                <span class="tech-icon">${tech.icon}</span>
+                                <span class="tech-name">${tech.name}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>✅ Résultats</h3>
+                    <ul class="results-list">
+                        ${project.results.map(result => `<li>${result}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>⚡ Défis techniques</h3>
+                    <p>${project.challenges}</p>
+                </div>
+            </div>
+        `;
+
+        modalContent.innerHTML = modalHTML;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+        currentProjectId = null;
+    }
+
+    // Navigate to adjacent project
+    function navigateProject(direction) {
+        if (!currentProjectId) return;
+
+        const projectIds = Object.keys(projectsData).map(Number).sort((a, b) => a - b);
+        const currentIndex = projectIds.indexOf(currentProjectId);
+
+        let newIndex;
+        if (direction === 'prev') {
+            newIndex = currentIndex > 0 ? currentIndex - 1 : projectIds.length - 1;
+        } else {
+            newIndex = currentIndex < projectIds.length - 1 ? currentIndex + 1 : 0;
+        }
+
+        openModal(projectIds[newIndex]);
+    }
+
+    // Event listeners
+    viewButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = button.closest('.project-card-compact');
+            const projectId = parseInt(card.getAttribute('data-project-id'));
+            openModal(projectId);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', () => navigateProject('prev'));
+    nextBtn.addEventListener('click', () => navigateProject('next'));
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'ArrowLeft') {
+            navigateProject('prev');
+        } else if (e.key === 'ArrowRight') {
+            navigateProject('next');
+        }
+    });
+}
+
 // === Project Filters with Animation ===
 function initProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card-large');
+    const projectCards = document.querySelectorAll('.project-card-compact');
 
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(button => {

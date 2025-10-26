@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bibliothèque de projets GTB, IoT et automatisme - Réalisations techniques">
     <title>Projets - Portfolio GTB</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,6 +21,9 @@
                 <li><a href="projects.html" class="nav-link active">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
+            <button class="theme-switcher" title="Changer de thème">
+                🌙 <span class="theme-text">Dark</span>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -50,412 +53,128 @@
         </div>
     </section>
 
-    <!-- Projects Grid -->
+    <!-- Projects Grid - Cartes Compactes -->
     <section class="projects-section">
         <div class="container">
-            <div class="projects-grid-large">
+            <div class="projects-grid-compact">
 
-                <!-- Projet 1: Supervision Mutualisée -->
-                <article class="project-card-large" data-category="gtb dev iot">
-                    <div class="project-badge">En cours / GTB / Cloud / SaaS</div>
-                    <div class="project-icon-large">🌐</div>
-                    <h3>Plateforme de Supervision Mutualisée Clients</h3>
-                    <p class="project-summary">
-                        <strong>2023 - En cours</strong> : Développement et hébergement d'une plateforme de supervision partagée permettant
-                        aux clients d'accéder à leur GTB à distance de manière sécurisée et centralisée, avec LNS LoRaWAN mutualisé.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Objectifs</h4>
-                        <ul>
-                            <li>Créer une plateforme multi-tenant pour héberger les supervisions clients</li>
-                            <li>Déployer un LNS LoRaWAN mutualisé pour tous les clients</li>
-                            <li>Faciliter l'accès à distance sécurisé pour les exploitants</li>
-                            <li>Mutualiser les ressources serveur et réduire les coûts</li>
-                            <li>Garantir la sécurité et l'isolation des données clients</li>
-                        </ul>
-
-                        <h4>⚙️ Architecture & Infrastructure</h4>
-                        <ul>
-                            <li><strong>Infrastructure:</strong> Serveurs dédiés hébergés sur Proxmox (virtualisation)</li>
-                            <li><strong>Supervision:</strong> Instances Niagara N4 isolées par client</li>
-                            <li><strong>LNS LoRaWAN:</strong> ChirpStack mutualisé pour gérer les devices LoRa de tous les clients</li>
-                            <li><strong>VPN:</strong> Accès sécurisé par VPN pour chaque client</li>
-                            <li><strong>Sécurité:</strong> Authentification forte, isolation réseau, firewall</li>
-                            <li><strong>Portail web:</strong> Interface d'accès sécurisée avec gestion des droits</li>
-                        </ul>
-
-                        <h4>⚙️ Technologies Déployées</h4>
-                        <ul>
-                            <li><strong>ChirpStack:</strong> Configuration et gestion d'un LNS mutualisé multi-tenant</li>
-                            <li><strong>Niagara N4:</strong> Hyperviseur et instances dédiées par client</li>
-                            <li><strong>Proxmox:</strong> Virtualisation et gestion de VMs</li>
-                            <li><strong>Linux:</strong> Administration système, EndeavourOS</li>
-                            <li><strong>VPN:</strong> WireGuard/OpenVPN pour accès distant sécurisé</li>
-                            <li><strong>Monitoring:</strong> Surveillance infrastructure (uptime, ressources, services)</li>
-                            <li><strong>Backup:</strong> Sauvegardes automatisées et redondance</li>
-                        </ul>
-
-                        <h4>✅ Résultats & Évolution Continue</h4>
-                        <ul>
-                            <li>Plateforme opérationnelle hébergeant plusieurs clients</li>
-                            <li>LNS ChirpStack mutualisé gérant tous les devices LoRa clients</li>
-                            <li>Accès simplifié et sécurisé via VPN pour les exploitants</li>
-                            <li>Réduction significative des coûts d'infrastructure pour les clients</li>
-                            <li>Disponibilité élevée (99%+)</li>
-                            <li>Satisfaction client et facilité de maintenance</li>
-                            <li>Évolutivité pour accueillir de nouveaux clients</li>
-                            <li>Amélioration continue avec ajout de fonctionnalités</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">En cours</span>
-                            <span class="tech-tag">Niagara N4</span>
-                            <span class="tech-tag">ChirpStack</span>
-                            <span class="tech-tag">LoRaWAN</span>
-                            <span class="tech-tag">Proxmox</span>
-                            <span class="tech-tag">VPN</span>
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">Multi-tenant</span>
-                            <span class="tech-tag">SaaS</span>
-                        </div>
+                <!-- Carte 1: Supervision Mutualisée -->
+                <article class="project-card-compact" data-category="gtb dev iot" data-project-id="1">
+                    <div class="project-icon">🌐</div>
+                    <div class="project-badge">En cours</div>
+                    <h3>Plateforme de Supervision Mutualisée</h3>
+                    <p class="project-period">2023 - En cours</p>
+                    <p class="project-excerpt">Hébergement cloud multi-tenant avec LNS LoRaWAN mutualisé pour clients GTB</p>
+                    <div class="project-tags">
+                        <span class="tag">GTB</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Cloud</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 2: Marché Public Aisne -->
-                <article class="project-card-large" data-category="marche-public gtb">
-                    <div class="project-badge">En cours / Marché Public / Régulation</div>
-                    <div class="project-icon-large">🏛️</div>
-                    <h3>Marché Public Aisne - Régulation Multi-Communes</h3>
-                    <p class="project-summary">
-                        <strong>2024-2026</strong> : Marché public pour la mise en place de systèmes de régulation dans plusieurs
-                        communes du département de l'Aisne, incluant chaufferies, comptage énergétique, automatisation et supervision.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Mission</h4>
-                        <ul>
-                            <li>Fourniture et installation d'automates pour multiples communes</li>
-                            <li>Mise en place de systèmes de régulation automatisée</li>
-                            <li>Intégration de comptage énergétique</li>
-                            <li>Garantir la conformité aux exigences du marché public</li>
-                        </ul>
-
-                        <h4>⚙️ Réalisations par Type d'Application</h4>
-                        <ul>
-                            <li><strong>Chauffage:</strong> Régulation de chaufferies communales (chaudières, PAC)</li>
-                            <li><strong>Compteurs:</strong> Intégration de compteurs d'énergie Modbus pour suivi consommations</li>
-                            <li><strong>Cloches:</strong> Automatisation et programmation horaire du pilotage des cloches</li>
-                            <li><strong>Déchets:</strong> Supervision de systèmes de gestion des déchets</li>
-                            <li><strong>Bâtiments publics:</strong> Régulation CVC de mairies, écoles, salles des fêtes</li>
-                        </ul>
-
-                        <h4>⚙️ Technologies Déployées</h4>
-                        <ul>
-                            <li><strong>Automates:</strong> Distech Controls</li>
-                            <li><strong>Protocoles:</strong> LoRaWAN, BACnet, Modbus RTU/TCP pour intégration équipements</li>
-                        </ul>
-
-                        <h4>✅ Résultats</h4>
-                        <ul>
-                            <li>Automates déployés dans toutes les communes du marché</li>
-                            <li>Systèmes de régulation opérationnels et conformes</li>
-                            <li>Optimisation des consommations énergétiques</li>
-                            <li>Accès à distance sécurisé pour maintenance</li>
-                            <li>Documentation technique complète (DOE)</li>
-                            <li>Conformité totale aux exigences du marché public</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">En cours</span>
-                            <span class="tech-tag">Marché public</span>
-                            <span class="tech-tag">Distech Controls</span>
-                            <span class="tech-tag">LoRaWAN</span>
-                            <span class="tech-tag">BACnet</span>
-                            <span class="tech-tag">Modbus</span>
-                            <span class="tech-tag">Régulation</span>
-                            <span class="tech-tag">Multi-sites</span>
-                        </div>
+                <!-- Carte 2: Marché Public Aisne -->
+                <article class="project-card-compact" data-category="marche-public gtb" data-project-id="2">
+                    <div class="project-icon">🏛️</div>
+                    <div class="project-badge">En cours</div>
+                    <h3>Marché Public Aisne</h3>
+                    <p class="project-period">2024 - 2026</p>
+                    <p class="project-excerpt">Régulation multi-communes avec chaufferies, comptage et automatisation</p>
+                    <div class="project-tags">
+                        <span class="tag">Marché Public</span>
+                        <span class="tag">Régulation</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 3: Supervision 5 Hôpitaux -->
-                <article class="project-card-large" data-category="gtb iot">
-                    <div class="project-badge">En cours / Hôpitaux / Supervision / LoRaWAN</div>
-                    <div class="project-icon-large">🏥</div>
-                    <h3>Supervision Multi-Sites - 5 Établissements Hospitaliers</h3>
-                    <p class="project-summary">
-                        <strong>2023-2025</strong> : Mise en place d'un système de supervision centralisée pour 5 établissements
-                        hospitaliers avec développement de 5 supervisions complètes et personnalisées, intégration d'automates
-                        existants et déploiement de nouveaux équipements LoRaWAN.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Objectifs</h4>
-                        <ul>
-                            <li>Développer 5 supervisions complètes et personnalisées (1 par hôpital)</li>
-                            <li>Intégrer les automates existants dans les supervisions</li>
-                            <li>Déployer de nouveaux automates et équipements LoRa</li>
-                            <li>Mettre en place un hyperviseur centralisé multi-sites</li>
-                            <li>Créer une architecture LoRaWAN privée hospitalière</li>
-                        </ul>
-
-                        <h4>⚙️ Architecture & Technologies</h4>
-                        <ul>
-                            <li><strong>Hyperviseur Niagara N4:</strong> Architecture maître-esclave pour supervision centralisée</li>
-                            <li><strong>Supervisions personnalisées:</strong> 5 interfaces spécifiques développées sur-mesure</li>
-                            <li><strong>LoRa Network Server:</strong> Déploiement d'un LNS pour les 5 sites</li>
-                            <li><strong>Gateways LoRa:</strong> Installation et positionnement pour couverture optimale</li>
-                            <li><strong>Intégration multi-marques:</strong> Distech Controls, Trend, Siemens</li>
-                            <li><strong>Protocoles:</strong> BACnet, Modbus, MQTT pour communications hétérogènes</li>
-                        </ul>
-
-                        <h4>⚙️ Réalisations Techniques</h4>
-                        <ul>
-                            <li><strong>Chaufferies:</strong> Supervision de nombreuses chaufferies et sous-stations</li>
-                            <li><strong>CVC:</strong> Gestion centralisée du chauffage, ventilation, climatisation</li>
-                            <li><strong>Devices LoRa:</strong> Déploiement de vannes thermostatiques et capteurs connectés</li>
-                            <li><strong>Graphiques personnalisés:</strong> Synoptiques animés adaptés à chaque établissement</li>
-                            <li><strong>Alarmes & reporting:</strong> Système d'alertes et tableaux de bord temps réel</li>
-                        </ul>
-
-                        <h4>✅ Résultats</h4>
-                        <ul>
-                            <li>5 supervisions complètes développées et opérationnelles</li>
-                            <li>Hyperviseur Niagara centralisé pour les 5 hôpitaux</li>
-                            <li>LNS LoRa fonctionnel avec couverture multi-sites</li>
-                            <li>Intégration réussie des automates existants et nouveaux</li>
-                            <li>Supervision centralisée de dizaines de chaufferies et équipements CVC</li>
-                            <li>Amélioration du confort et optimisation énergétique</li>
-                            <li>Interfaces ergonomiques appréciées des exploitants</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">En cours</span>
-                            <span class="tech-tag">Niagara N4</span>
-                            <span class="tech-tag">Hyperviseur</span>
-                            <span class="tech-tag">LoRaWAN</span>
-                            <span class="tech-tag">LNS</span>
-                            <span class="tech-tag">Distech</span>
-                            <span class="tech-tag">Trend</span>
-                            <span class="tech-tag">Multi-sites</span>
-                            <span class="tech-tag">Hôpitaux</span>
-                        </div>
+                <!-- Carte 3: 5 Hôpitaux -->
+                <article class="project-card-compact" data-category="gtb iot" data-project-id="3">
+                    <div class="project-icon">🏥</div>
+                    <div class="project-badge">En cours</div>
+                    <h3>Supervision 5 Hôpitaux</h3>
+                    <p class="project-period">2023 - 2025</p>
+                    <p class="project-excerpt">Hyperviseur centralisé avec 5 supervisions personnalisées et réseau LoRa</p>
+                    <div class="project-tags">
+                        <span class="tag">Multi-sites</span>
+                        <span class="tag">LoRaWAN</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 4: Supervision CVC Hospitalière -->
-                <article class="project-card-large" data-category="iot gtb">
-                    <div class="project-badge">IoT / LoRaWAN / Hôpital</div>
-                    <div class="project-icon-large">🏥</div>
-                    <h3>Supervision CVC Hospitalière - 500 Vannes Thermostatiques LoRa</h3>
-                    <p class="project-summary">
-                        <strong>2023</strong> : Installation d'une supervision complète pour chauffage et ECS (Eau Chaude Sanitaire)
-                        dans un établissement hospitalier avec déploiement massif de vannes LoRa et LoRa Network Server.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Objectifs</h4>
-                        <ul>
-                            <li>Déployer 500 vannes thermostatiques connectées LoRaWAN</li>
-                            <li>Mettre en place un réseau LoRa privé hospitalier</li>
-                            <li>Superviser chauffage et ECS via Niagara N4</li>
-                            <li>Optimiser le confort et les consommations énergétiques</li>
-                        </ul>
-
-                        <h4>⚙️ Technologies & Réalisations</h4>
-                        <ul>
-                            <li><strong>Vannes LoRa:</strong> Déploiement de 500 vannes thermostatiques connectées</li>
-                            <li><strong>LoRa Network Server:</strong> Mise en place et configuration d'un LNS dédié</li>
-                            <li><strong>Gateways:</strong> Installation et positionnement optimal pour couverture complète</li>
-                            <li><strong>Supervision:</strong> Administration via Niagara N4 avec interfaces personnalisées</li>
-                            <li><strong>CVC:</strong> Intégration complète chauffage et production ECS</li>
-                            <li><strong>Programmation:</strong> Logiques de régulation adaptées au milieu hospitalier</li>
-                        </ul>
-
-                        <h4>✅ Résultats</h4>
-                        <ul>
-                            <li>500 vannes LoRa déployées et opérationnelles</li>
-                            <li>Couverture réseau LoRa complète de l'établissement</li>
-                            <li>Supervision centralisée Niagara N4 fonctionnelle</li>
-                            <li>Régulation fine pièce par pièce</li>
-                            <li>Amélioration du confort des patients et du personnel</li>
-                            <li>Économies d'énergie substantielles mesurées</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">LoRaWAN</span>
-                            <span class="tech-tag">Niagara N4</span>
-                            <span class="tech-tag">LNS</span>
-                            <span class="tech-tag">Vannes LoRa</span>
-                            <span class="tech-tag">CVC</span>
-                            <span class="tech-tag">Hôpital</span>
-                        </div>
+                <!-- Carte 4: 500 Vannes LoRa -->
+                <article class="project-card-compact" data-category="iot gtb" data-project-id="4">
+                    <div class="project-icon">🏥</div>
+                    <div class="project-badge">Terminé</div>
+                    <h3>500 Vannes Thermostatiques LoRa</h3>
+                    <p class="project-period">2023</p>
+                    <p class="project-excerpt">Déploiement massif de vannes connectées avec LNS dédié dans un hôpital</p>
+                    <div class="project-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">LoRaWAN</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 5: Éclairage Public -->
-                <article class="project-card-large" data-category="gtb marche-public">
-                    <div class="project-badge">Marché Public / GTB</div>
-                    <div class="project-icon-large">💡</div>
-                    <h3>Modernisation de l'Éclairage Public - 3600+ Automates</h3>
-                    <p class="project-summary">
-                        <strong>2021 - 2023</strong> : Responsable d'un marché public pour la modernisation complète de
-                        l'éclairage public avec déploiement de plus de 3600 automates 4G pilotant plusieurs dizaines de milliers
-                        de points lumineux, et coordination de 7 sous-traitants.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Mission</h4>
-                        <ul>
-                            <li>Piloter le déploiement de 3 600+ automates connectés</li>
-                            <li>Superviser plusieurs dizaines de milliers de points lumineux</li>
-                            <li>Coordonner 7 sous-traitants sur l'ensemble du projet</li>
-                            <li>Déployer une supervision centralisée avec retours à distance</li>
-                            <li>Garantir la conformité technique et réglementaire</li>
-                        </ul>
-
-                        <h4>⚙️ Réalisations Techniques</h4>
-                        <ul>
-                            <li><strong>Automates:</strong> Déploiement de 3600+ automates connectés 4G pour pilotage des armoires</li>
-                            <li><strong>Supervision:</strong> Mise en place d'une plateforme de supervision centralisée</li>
-                            <li><strong>Comptage:</strong> Intégration de compteurs Modbus pour suivi des consommations</li>
-                            <li><strong>Industrialisation:</strong> Création de processus standardisés pour chargement automates/modems</li>
-                            <li><strong>Base de données:</strong> Développement d'une BDD pour suivi matériel et conformité</li>
-                            <li><strong>Reporting:</strong> Tableaux de bord temps réel et historiques de consommation</li>
-                        </ul>
-
-                        <h4>✅ Résultats</h4>
-                        <ul>
-                            <li>3 600+ automates déployés et opérationnels</li>
-                            <li>Plusieurs dizaines de milliers de points lumineux supervisés</li>
-                            <li>7 sous-traitants coordonnés avec succès</li>
-                            <li>100% des armoires connectées et pilotables à distance</li>
-                            <li>Réduction significative des consommations énergétiques</li>
-                            <li>Base de données complète pour maintenance préventive</li>
-                            <li>Retour sur investissement rapide grâce à l'optimisation</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Automates 4G</span>
-                            <span class="tech-tag">Supervision</span>
-                            <span class="tech-tag">Modbus</span>
-                            <span class="tech-tag">Base de données</span>
-                            <span class="tech-tag">Gestion de projet</span>
-                            <span class="tech-tag">Marché public</span>
-                        </div>
+                <!-- Carte 5: Éclairage Public -->
+                <article class="project-card-compact" data-category="gtb marche-public" data-project-id="5">
+                    <div class="project-icon">💡</div>
+                    <div class="project-badge">Terminé</div>
+                    <h3>3600+ Automates Éclairage Public</h3>
+                    <p class="project-period">2021 - 2023</p>
+                    <p class="project-excerpt">Modernisation complète avec supervision et coordination de 7 sous-traitants</p>
+                    <div class="project-tags">
+                        <span class="tag">Marché Public</span>
+                        <span class="tag">GTB</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 6: Solutions IoT sans fil -->
-                <article class="project-card-large" data-category="iot dev">
-                    <div class="project-badge">IoT / Développement</div>
-                    <div class="project-icon-large">📡</div>
-                    <h3>Développement de Solutions IoT Sans Fil</h3>
-                    <p class="project-summary">
-                        <strong>2016-2022</strong> : Développement et mise en place de technologies sans fil IoT (sondes température,
-                        COV, etc.) avec intégration dans systèmes de supervision CVC.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Objectifs</h4>
-                        <ul>
-                            <li>Développer des solutions IoT sans fil pour le bâtiment</li>
-                            <li>Intégrer des capteurs environnementaux (T°, HR, COV, CO2)</li>
-                            <li>Faciliter le déploiement sans câblage coûteux</li>
-                            <li>Connecter les capteurs aux systèmes de régulation existants</li>
-                        </ul>
-
-                        <h4>⚙️ Technologies & Réalisations</h4>
-                        <ul>
-                            <li><strong>Capteurs:</strong> Sondes température, hygrométrie, COV, CO2 sans fil</li>
-                            <li><strong>Protocoles:</strong> LoRaWAN, Zigbee, EnOcean selon applications</li>
-                            <li><strong>Intégration:</strong> Connexion aux automates Trend, Distech, Siemens</li>
-                            <li><strong>Développement:</strong> Scripts de traitement et intégration de données</li>
-                            <li><strong>Supervision:</strong> Affichage des données dans interfaces GTB</li>
-                        </ul>
-
-                        <h4>✅ Résultats</h4>
-                        <ul>
-                            <li>Déploiement rapide sans travaux de câblage</li>
-                            <li>Réduction significative des coûts d'installation</li>
-                            <li>Monitoring précis de la qualité d'air</li>
-                            <li>Intégration réussie avec régulations CVC</li>
-                            <li>Amélioration du confort et de la qualité d'air</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">IoT</span>
-                            <span class="tech-tag">LoRaWAN</span>
-                            <span class="tech-tag">Capteurs</span>
-                            <span class="tech-tag">CVC</span>
-                            <span class="tech-tag">Trend</span>
-                            <span class="tech-tag">Distech</span>
-                        </div>
+                <!-- Carte 6: IoT Sans Fil -->
+                <article class="project-card-compact" data-category="iot dev" data-project-id="6">
+                    <div class="project-icon">📡</div>
+                    <div class="project-badge">Terminé</div>
+                    <h3>Solutions IoT Sans Fil</h3>
+                    <p class="project-period">2016 - 2022</p>
+                    <p class="project-excerpt">Développement et intégration de capteurs environnementaux sans fil</p>
+                    <div class="project-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Développement</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
-                <!-- Projet 6: Programmation Automates & Régulation -->
-                <article class="project-card-large" data-category="gtb">
-                    <div class="project-badge">Automatisme / Régulation</div>
-                    <div class="project-icon-large">⚙️</div>
-                    <h3>Programmation d'Automates CVC & Mise en Service</h3>
-                    <p class="project-summary">
-                        <strong>2016-2022</strong> : Intégration et programmation d'automates pour installations CVC (chauffage,
-                        ventilation, climatisation) avec mise en service, mise au point et développement de supervision.
-                    </p>
-
-                    <div class="project-details">
-                        <h4>🎯 Expertise Développée</h4>
-                        <ul>
-                            <li>Programmation d'automates multi-marques (Trend, Distech, Siemens)</li>
-                            <li>Mise en service et mise au point d'installations CVC</li>
-                            <li>Développement de supervisions personnalisées</li>
-                            <li>Réponses à appels d'offres techniques</li>
-                        </ul>
-
-                        <h4>⚙️ Réalisations Types</h4>
-                        <ul>
-                            <li><strong>Chauffage:</strong> Régulation de chaudières, PAC, sous-stations</li>
-                            <li><strong>Ventilation:</strong> CTA double flux, extraction, soufflage</li>
-                            <li><strong>Climatisation:</strong> Groupes froids, systèmes VRV</li>
-                            <li><strong>Séquences:</strong> Démarrage/arrêt, cascades, délestages</li>
-                            <li><strong>Optimisation:</strong> Free-cooling, récupération, programmation horaire</li>
-                            <li><strong>Interfaces:</strong> Synoptiques animés, alarmes, historiques</li>
-                        </ul>
-
-                        <h4>⚙️ Technologies Maîtrisées</h4>
-                        <ul>
-                            <li><strong>Trend:</strong> Programmation FTL (Function Text Language)</li>
-                            <li><strong>Distech Controls:</strong> Programmation ECL-Builder</li>
-                            <li><strong>Siemens:</strong> DESIGO, SIMATIC</li>
-                            <li><strong>Protocoles:</strong> BACnet, Modbus, LON</li>
-                            <li><strong>Outils:</strong> Wireshark pour debug réseau, analyseurs de protocoles</li>
-                        </ul>
-
-                        <h4>✅ Compétences Clés</h4>
-                        <ul>
-                            <li>Analyse fonctionnelle et programmation d'automates</li>
-                            <li>Mise en service et réglages fins</li>
-                            <li>Résolution de problèmes techniques complexes</li>
-                            <li>Formation des exploitants</li>
-                            <li>Documentation technique (DOE, schémas)</li>
-                        </ul>
-
-                        <div class="project-tech-stack">
-                            <span class="tech-tag">Trend</span>
-                            <span class="tech-tag">Distech Controls</span>
-                            <span class="tech-tag">Siemens</span>
-                            <span class="tech-tag">BACnet</span>
-                            <span class="tech-tag">Modbus</span>
-                            <span class="tech-tag">CVC</span>
-                        </div>
+                <!-- Carte 7: Programmation Automates -->
+                <article class="project-card-compact" data-category="gtb" data-project-id="7">
+                    <div class="project-icon">⚙️</div>
+                    <div class="project-badge">Terminé</div>
+                    <h3>Programmation Automates CVC</h3>
+                    <p class="project-period">2016 - 2022</p>
+                    <p class="project-excerpt">Intégration multi-marques avec mise en service et développement supervision</p>
+                    <div class="project-tags">
+                        <span class="tag">Automatisme</span>
+                        <span class="tag">CVC</span>
                     </div>
+                    <button class="btn-view-project">Voir le projet →</button>
                 </article>
 
             </div>
         </div>
     </section>
+
+    <!-- Modal Détails Projet -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal-navigation">
+                <button class="modal-nav-btn modal-prev" aria-label="Projet précédent">←</button>
+                <button class="modal-nav-btn modal-next" aria-label="Projet suivant">→</button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                <!-- Le contenu sera injecté dynamiquement ici -->
+            </div>
+        </div>
+    </div>
 
     <!-- Add Project CTA -->
     <section class="add-project-cta">
