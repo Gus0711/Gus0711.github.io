@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initParticlesBackground();
     initCursorEffect();
-    initCursorEffect();
     initTerminalEffect();
     initButtonEffects();
 });
@@ -148,8 +147,8 @@ function initProjectModal() {
 
     // Project data with full details
     const projectsData = {
-        'ctrlpoint': {
-            id: 'ctrlpoint',
+        0: {
+            id: 0,
             icon: '⚡',
             badge: 'En construction',
             title: 'CtrlPoint - Gestion de projets GTB',
@@ -491,7 +490,7 @@ function initProjectModal() {
 
     // Navigate to adjacent project
     function navigateProject(direction) {
-        if (!currentProjectId) return;
+        if (currentProjectId === null || currentProjectId === undefined) return;
 
         const projectIds = Object.keys(projectsData).map(Number).sort((a, b) => a - b);
         const currentIndex = projectIds.indexOf(currentProjectId);
@@ -507,10 +506,26 @@ function initProjectModal() {
     }
 
     // Event listeners
+    // Listener on buttons
     viewButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation(); // Prevent bubbling if card has listener
             const card = button.closest('.project-card');
+            const projectId = parseInt(card.getAttribute('data-project-id'));
+            openModal(projectId);
+        });
+    });
+
+    // Add listener to the whole card for better UX
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.style.cursor = 'pointer'; // Show it's clickable
+        card.addEventListener('click', (e) => {
+            // Don't trigger if clicking explicit links or buttons (already handled)
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('a')) {
+                return;
+            }
             const projectId = parseInt(card.getAttribute('data-project-id'));
             openModal(projectId);
         });
