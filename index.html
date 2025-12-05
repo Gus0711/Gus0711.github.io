@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio professionnel - Ingénieur en Gestion Technique du Bâtiment (GTB), spécialisé en automatisme, IoT/LoRaWAN et optimisation énergétique">
-    <title>Portfolio GTB - Ingénieur Automatisme & IoT</title>
+    <meta name="description"
+        content="Portfolio professionnel - Ingénieur en Gestion Technique du Bâtiment (GTB), spécialisé en automatisme, IoT/LoRaWAN et optimisation énergétique">
+    <title>G7 Automation - GTB & IoT Project Manager</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">G7 Automation</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="index.html" class="nav-link active">Accueil</a></li>
                 <li><a href="skills.html" class="nav-link">Compétences</a></li>
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="theme-switcher" title="Changer de thème">
-                🌙 <span class="theme-text">Dark</span>
-            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -34,39 +34,49 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Ingénieur en Gestion Technique du Bâtiment</h1>
-                <p class="hero-subtitle">Automatisme • Supervision • Optimisation Énergétique</p>
-                <p class="hero-description">
-                    Expert en GTB/BMS et solutions IoT/LoRaWAN, je conçois et déploie des systèmes
-                    intelligents pour optimiser les performances énergétiques et le confort des bâtiments.
-                </p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn btn-primary">Découvrir mes projets</a>
-                    <a href="contact.html" class="btn btn-secondary">Me contacter</a>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="terminal-badge">
+                        <span class="status-dot"></span> SYSTEM_ONLINE
+                    </div>
+                    <h1 class="hero-title glitch-text" data-text="GTB & IOT PROJECT MANAGER">GTB & IOT PROJECT MANAGER
+                    </h1>
+                    <p class="hero-subtitle mono">> Expert Automatisme • Supervision • Optimisation Énergétique</p>
+                    <p class="hero-description">
+                        Architecture de systèmes intelligents pour bâtiments connectés.
+                        Spécialisé en déploiement LoRaWAN et Supervisions Niagara N4.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">
+                            <span class="btn-text">INITIALISER_PROJETS()</span>
+                            <span class="btn-glitch"></span>
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <span class="btn-text">CONTACTER_SYSTEME()</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-card">
-                    <div class="card-icon">🏢</div>
-                    <div class="card-content">
-                        <h3>Bâtiments Intelligents</h3>
-                        <p>Conception de solutions GTB complètes</p>
+
+            <div class="hero-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                        <div class="terminal-title">user@g7-automation:~</div>
                     </div>
-                </div>
-                <div class="hero-card">
-                    <div class="card-icon">📡</div>
-                    <div class="card-content">
-                        <h3>IoT / LoRaWAN</h3>
-                        <p>Déploiement de réseaux de capteurs</p>
-                    </div>
-                </div>
-                <div class="hero-card">
-                    <div class="card-icon">⚙️</div>
-                    <div class="card-content">
-                        <h3>Automatisme</h3>
-                        <p>Programmation de systèmes complexes</p>
+                    <div class="terminal-body" id="hero-terminal">
+                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">init_portfolio.sh
+                                --force</span></div>
+                        <div class="code-line text-dim">Loading core modules...</div>
+                        <div class="code-line text-success">[OK] GTB_Controller loaded</div>
+                        <div class="code-line text-success">[OK] LoRaWAN_Network connected (5000+ devices)</div>
+                        <div class="code-line text-success">[OK] Niagara_N4_Supervisor ready</div>
+                        <div class="code-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></div>
                     </div>
                 </div>
             </div>
@@ -74,75 +84,72 @@
     </header>
 
     <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">À propos</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Expertise en Gestion Technique du Bâtiment</h3>
-                    <p>
-                        <strong>Responsable de projet automatisation</strong> depuis janvier 2021, je pilote des projets
-                        d'envergure en GTB et IoT : marchés publics multi-sites, déploiement de réseaux LoRaWAN privés,
-                        supervision de plus de 3600 automates pilotant plusieurs dizaines de milliers de points lumineux,
-                        et pilotage de chaufferies automatisées. J'assure également l'intégration et la communication
-                        avec tous types d'équipements (VRV, CTA, régulation, comptage).
-                    </p>
-                    <p>
-                        Fort de <strong>9 ans d'expérience</strong> en automatisme et régulation (Distech Controls, Trend, Siemens),
-                        je maîtrise l'ensemble de la chaîne : du dimensionnement technique à la mise en service,
-                        en passant par la programmation d'automates et le développement de supervisions Niagara N4.
-                    </p>
+    <section id="about" class="container">
+        <div class="section-header">
+            <h2 class="section-title">À Propos</h2>
+            <p class="section-subtitle">01. Profil & Expertise</p>
+        </div>
 
-                    <div class="specialties">
-                        <div class="specialty-item">
-                            <span class="specialty-icon">🎯</span>
-                            <div>
-                                <h4>Automatisme & Supervision</h4>
-                                <p>Programmation et déploiement de systèmes GTB/BMS performants</p>
-                            </div>
-                        </div>
-                        <div class="specialty-item">
-                            <span class="specialty-icon">🌐</span>
-                            <div>
-                                <h4>IoT & Communication</h4>
-                                <p>Architecture LoRaWAN, MQTT et intégration multi-protocoles</p>
-                            </div>
-                        </div>
-                        <div class="specialty-item">
-                            <span class="specialty-icon">💻</span>
-                            <div>
-                                <h4>Développement</h4>
-                                <p>Java, JavaScript, Python pour solutions BMS personnalisées</p>
-                            </div>
-                        </div>
-                        <div class="specialty-item">
-                            <span class="specialty-icon">⚡</span>
-                            <div>
-                                <h4>Optimisation Énergétique</h4>
-                                <p>Analyse, monitoring et réduction des consommations</p>
-                            </div>
-                        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    <strong>Responsable de projet automatisation</strong> depuis janvier 2021, je pilote des projets
+                    d'envergure en GTB et IoT.
+                    Mon expertise couvre les marchés publics multi-sites, le déploiement de réseaux LoRaWAN privés, et
+                    la supervision complexe.
+                </p>
+                <div class="founder-note reveal-hidden">
+                    <h4>🚀 Fondateur de <a href="https://www.ctrlpoint.eu" target="_blank"
+                            class="founder-link">CtrlPoint.eu</a></h4>
+                    <p>
+                        La solution SaaS pour <strong>créer, organiser et exporter</strong> vos listes de points GTB.
+                        Simplifiez la gestion de vos projets et gagnez un temps précieux.
+                    </p>
+                </div>
+                <p>
+                    Je pilote aujourd'hui une architecture de plus de <strong>3600 automates</strong> gérant plusieurs
+                    dizaines de milliers de points lumineux et chaudières automatisées.
+                    J'assure l'intégration complète, du dimensionnement technique à la mise en service, en passant par
+                    le développement de solutions sur mesure (Niagara N4).
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">9+</span>
+                        <span class="stat-label">Années d'Expérience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3.6k+</span>
+                        <span class="stat-label">Automates Gérés</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5k+</span>
+                        <span class="stat-label">Devices LoRa</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Engagement</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-icon">📅</div>
-                        <div class="stat-number">9+ ans</div>
-                        <div class="stat-label">d'expérience<br>GTB & Automatisme</div>
+            <div class="about-visual">
+                <!-- Skills Summary -->
+                <div class="skills-grid" style="grid-template-columns: 1fr;">
+                    <div class="skill-card">
+                        <div class="skill-title"><span class="cyan">⚡</span> Automatisme & Supervision</div>
+                        <p style="font-size: 0.9rem; margin:0;">Programmation Distech/Trend/Siemens et déploiement de
+                            systèmes GTB/BMS performants.</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🏢</div>
-                        <div class="stat-number">3600+</div>
-                        <div class="stat-label">Automates<br>éclairage public</div>
+                    <div class="skill-card">
+                        <div class="skill-title"><span class="cyan">🌐</span> IoT & Communication</div>
+                        <p style="font-size: 0.9rem; margin:0;">Architecture LoRaWAN, MQTT et intégration
+                            multi-protocoles.</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">📡</div>
-                        <div class="stat-number">5000+</div>
-                        <div class="stat-label">Devices LoRa<br>déployées</div>
+                    <div class="skill-card">
+                        <div class="skill-title"><span class="cyan">💻</span> Développement</div>
+                        <p style="font-size: 0.9rem; margin:0;">Java, JavaScript, Python pour solutions BMS
+                            personnalisées.</p>
                     </div>
                 </div>
             </div>
@@ -150,158 +157,163 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Services & Consulting</h2>
-                <div class="section-line"></div>
+    <section id="services" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Services & Consulting</h2>
+            <p class="section-subtitle">02. Offre de Services</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Gestion Technique du Bâtiment</h3>
+                <ul>
+                    <li>Conception et programmation de systèmes GTB/BMS</li>
+                    <li>Supervision CVC (Climatisation, Ventilation, Chauffage)</li>
+                    <li>Mise en service et commissioning</li>
+                    <li>Optimisation énergétique et suivi des consommations</li>
+                </ul>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Gestion Technique du Bâtiment</h3>
-                    <ul>
-                        <li>Conception et programmation de systèmes GTB/BMS</li>
-                        <li>Supervision CVC (Climatisation, Ventilation, Chauffage)</li>
-                        <li>Mise en service et commissioning</li>
-                        <li>Optimisation énergétique et suivi des consommations</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📡</div>
-                    <h3>Solutions IoT & Monitoring</h3>
-                    <ul>
-                        <li>Déploiement de réseaux LoRaWAN</li>
-                        <li>Intégration de capteurs multi-protocoles</li>
-                        <li>Architecture MQTT et gestion de données</li>
-                        <li>Développement de codecs de décodage personnalisés</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Développement & Intégration</h3>
-                    <ul>
-                        <li>Programmation Niagara (Java)</li>
-                        <li>Scripts d'automatisation (JavaScript, Python)</li>
-                        <li>Création de symboles animés pour interfaces</li>
-                        <li>Infrastructure serveur (Proxmox, Linux)</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Consulting Technique</h3>
-                    <ul>
-                        <li>Assistance à maîtrise d'ouvrage</li>
-                        <li>Rédaction de consultations techniques</li>
-                        <li>Analyse de besoins et cahier des charges</li>
-                        <li>Coordination de sous-traitants</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Audit & Optimisation Énergétique</h3>
-                    <ul>
-                        <li>Audit de systèmes GTB existants</li>
-                        <li>Analyse des consommations énergétiques</li>
-                        <li>Optimisation des performances CVC</li>
-                        <li>Mise en place de KPIs et reporting</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Formation & Support</h3>
-                    <ul>
-                        <li>Formation des exploitants GTB</li>
-                        <li>Accompagnement à la prise en main</li>
-                        <li>Support technique et hotline</li>
-                        <li>Documentation technique (DOE, manuels)</li>
-                    </ul>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">📡</div>
+                <h3>Solutions IoT & Monitoring</h3>
+                <ul>
+                    <li>Déploiement de réseaux LoRaWAN</li>
+                    <li>Intégration de capteurs multi-protocoles</li>
+                    <li>Architecture MQTT et gestion de données</li>
+                    <li>Développement de codecs de décodage personnalisés</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Développement & Intégration</h3>
+                <ul>
+                    <li>Programmation Niagara (Java)</li>
+                    <li>Scripts d'automatisation (JavaScript, Python)</li>
+                    <li>Création de symboles animés pour interfaces</li>
+                    <li>Infrastructure serveur (Proxmox, Linux)</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Consulting Technique</h3>
+                <ul>
+                    <li>Assistance à maîtrise d'ouvrage</li>
+                    <li>Rédaction de consultations techniques</li>
+                    <li>Analyse de besoins et cahier des charges</li>
+                    <li>Coordination de sous-traitants</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Audit & Optimisation Énergétique</h3>
+                <ul>
+                    <li>Audit de systèmes GTB existants</li>
+                    <li>Analyse des consommations énergétiques</li>
+                    <li>Optimisation des performances CVC</li>
+                    <li>Mise en place de KPIs et reporting</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Formation & Support</h3>
+                <ul>
+                    <li>Formation des exploitants GTB</li>
+                    <li>Accompagnement à la prise en main</li>
+                    <li>Support technique et hotline</li>
+                    <li>Documentation technique (DOE, manuels)</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Parcours & Formation Section -->
-    <section class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Parcours & Formation</h2>
-                <div class="section-line"></div>
+    <section id="career" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Parcours & Formation</h2>
+            <p class="section-subtitle">03. Expérience Professionnelle</p>
+        </div>
+
+        <div class="timeline-container">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2021 - Présent</span>
+                    <h3 class="timeline-role">Responsable Projet Automatisme / IoT</h3>
+                    <span class="timeline-company">SOGETREL - Agence Ouest</span>
+                    <p class="timeline-desc">
+                        Pilotage de projets Smart City et marchés de performance énergétique.
+                        Gestion de marchés publics multi-sites (éclairage public, pilotage CVC pour des communes).
+                    </p>
+                    <ul class="timeline-tags">
+                        <li class="timeline-tag">Gestion Projet</li>
+                        <li class="timeline-tag">LoRaWAN</li>
+                        <li class="timeline-tag">Niagara N4</li>
+                        <li class="timeline-tag">Management Équipe</li>
+                    </ul>
+                </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">💼</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Janvier 2021 - Aujourd'hui</div>
-                        <h3>Responsable de Projet Automatisation</h3>
-                        <ul class="timeline-highlights">
-                            <li>Pilotage de marchés publics multi-sites (éclairage public, pilotage CVC pour des communes)</li>
-                            <li>Installation et Supervision de 6 hôpitaux avec hyperviseur Niagara et LNS LoRa</li>
-                            <li>Déploiement de 5000+ devices LoRa</li>
-                            <li>Coordination de 7 sous-traitants sur projets complexes</li>
-                            <li>Développement de plateforme de supervision mutualisée (VPN/LNS/Serveur)</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">💼</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Juin 2016 - Août 2022</div>
-                        <h3>Représentant Technico-Commercial & Automaticien</h3>
-                        <ul class="timeline-highlights">
-                            <li>Intégration d'automates TREND / Siemens / Distech Controls</li>
-                            <li>Programmation et mise en service d'installations CVC</li>
-                            <li>Développement de supervisions personnalisées</li>
-                            <li>Déploiement de technologies IoT sans fil (sondes T°, COV)</li>
-                            <li>Chiffrage de chaufferies et réponses aux appels d'offres</li>
-                        </ul>
-                    </div>
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">août 2017 - janv 2021</span>
+                    <h3 class="timeline-role">Technicien GTB / Metteur au point</h3>
+                    <span class="timeline-company">SOGETREL / COFELY AXIMA</span>
+                    <p class="timeline-desc">
+                        Programmation et mise en service d'automates (Trend, Distech, Siemens).
+                        Gestion de chantiers tertiaires et hospitaliers.
+                    </p>
+                    <ul class="timeline-tags">
+                        <li class="timeline-tag">Trend 963</li>
+                        <li class="timeline-tag">Siemens Desigo</li>
+                        <li class="timeline-tag">Mise en service</li>
+                        <li class="timeline-tag">Déplacements Nationaux</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">💼</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Novembre 2009 - Octobre 2015</div>
-                        <h3>Technico Commercial</h3>
-                        <ul class="timeline-highlights">
-                            <li>Responsable des achats et du stock</li>
-                            <li>Support technique (régulation, PAC, pompes, chaudières)</li>
-                            <li>Chiffrage et dimensionnement complet de chaufferies</li>
-                            <li>Programmation de régulation Siemens & Trend</li>
-                        </ul>
-                    </div>
+            <!-- Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2015 - 2017</span>
+                    <h3 class="timeline-role">Apprenti Ingénieur Domotique/Immotique</h3>
+                    <span class="timeline-company">Université de Rennes 1 / Axima</span>
+                    <p class="timeline-desc">
+                        Formation en alternance. Licence Professionnelle Domotique et Immotique.
+                    </p>
+                    <ul class="timeline-tags">
+                        <li class="timeline-tag">Licence Pro</li>
+                        <li class="timeline-tag">Formation</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">🎓</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2008 - 2009</div>
-                        <h3>Licence Professionnelle</h3>
-                        <p class="company">IUT Jules Verne</p>
-                        <p>Ingénieur / Technicien en Technologie d'Automatisation</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">🎓</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2007 - 2008</div>
-                        <h3>DUT Génie Électrique et Informatique Industrielle (GEII)</h3>
-                        <p class="company">IUT Jules Verne</p>
-                    </div>
+            <!-- Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2007 - 2009</span>
+                    <h3 class="timeline-role">DUT Génie Électrique et Info Industrielle (GEII)</h3>
+                    <span class="timeline-company">IUT Jules Verne</span>
+                    <p class="timeline-desc">
+                        Formation technique spécialisée en automatisme et électronique.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
+    <section class="cta" style="margin-bottom: 0; border-top: 1px solid var(--border-light);">
+        <div class="container" style="text-align: center; padding: 4rem 0;">
             <div class="cta-content">
-                <h2>Un projet GTB ou IoT en vue ?</h2>
-                <p>Discutons de votre projet et des solutions techniques adaptées à vos besoins</p>
-                <a href="contact.html" class="btn btn-light">Prendre contact</a>
+                <h2 style="margin-bottom: 1rem;">Un projet GTB ou IoT en vue ?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">Discutons de votre projet et des solutions
+                    techniques adaptées à vos besoins</p>
+                <a href="contact.html" class="btn btn-primary">Prendre contact</a>
             </div>
         </div>
     </section>
@@ -312,8 +324,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>G7 Automation</h3>
-                    <p>Ingénieur en Gestion Technique du Bâtiment</p>
-                    <p>Spécialiste Automatisme, IoT & Optimisation Énergétique</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Ingénieur en Gestion Technique du Bâtiment.<br>
+                        Spécialiste Automatisme, IoT & Optimisation Énergétique.
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h4>Navigation</h4>
@@ -329,7 +343,7 @@
                     <ul>
                         <li><a href="mailto:contact@example.com">Email</a></li>
                         <li><a href="https://github.com/Gus0711" target="_blank">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://linkedin.com/in/octave-l" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -341,4 +355,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

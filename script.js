@@ -4,7 +4,7 @@
 // ============================================
 
 // DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initNavbar();
     initMobileMenu();
     initThemeSwitcher();
@@ -14,7 +14,80 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initParticlesBackground();
     initCursorEffect();
+    initCursorEffect();
+    initTerminalEffect();
+    initButtonEffects();
 });
+
+// === Button Effects (Glitch & Magnetic) ===
+function initButtonEffects() {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(btn => {
+        // Inject Glitch Span for primary buttons
+        if (btn.classList.contains('btn-primary')) {
+            // Check if not already exists
+            if (!btn.querySelector('.btn-glitch')) {
+                const glitchSpan = document.createElement('span');
+                glitchSpan.className = 'btn-glitch';
+                btn.appendChild(glitchSpan);
+            }
+        }
+
+        // Magnetic Effect
+        btn.addEventListener('mousemove', function (e) {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Limit movement range
+            const deltaX = (x - centerX) / 8;
+            const deltaY = (y - centerY) / 8;
+
+            this.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
+        });
+
+        btn.addEventListener('mouseleave', function () {
+            this.style.transform = ''; // Clear inline transform to revert to CSS
+        });
+    });
+}
+
+// === Terminal Typing Effect ===
+function initTerminalEffect() {
+    const terminalBody = document.getElementById('hero-terminal');
+    if (!terminalBody) return;
+
+    const lines = terminalBody.querySelectorAll('.code-line:not(:last-child)');
+    const lastLine = terminalBody.querySelector('.code-line:last-child');
+
+    // Hide all lines initially
+    lines.forEach(line => line.style.display = 'none');
+    if (lastLine) lastLine.style.display = 'none';
+
+    let currentLine = 0;
+
+    function showNextLine() {
+        if (currentLine < lines.length) {
+            lines[currentLine].style.display = 'block';
+            // Optional: simulate typing for the first command
+            if (currentLine === 0) {
+                // Just show it for now, can be complex typing later
+            }
+            currentLine++;
+            setTimeout(showNextLine, 400 + Math.random() * 400); // Random delay
+        } else {
+            // Show cursor line at the end
+            if (lastLine) lastLine.style.display = 'block';
+        }
+    }
+
+    // Start after a small delay
+    setTimeout(showNextLine, 1000);
+}
 
 // === Navbar Scroll Effect ===
 function initNavbar() {
@@ -32,7 +105,7 @@ function initNavbar() {
 // === Mobile Menu Toggle ===
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.querySelector('.nav-links');
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -59,44 +132,6 @@ function initMobileMenu() {
     }
 }
 
-// === Theme Switcher ===
-function initThemeSwitcher() {
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    const styleLink = document.getElementById('theme-style');
-
-    if (!themeSwitcher || !styleLink) return;
-
-    // Load saved theme preference
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'v3';
-    applyTheme(savedTheme);
-
-    // Switch theme on button click
-    themeSwitcher.addEventListener('click', function() {
-        const currentTheme = styleLink.getAttribute('href').includes('v1') ? 'v1' : 'v3';
-        const newTheme = currentTheme === 'v3' ? 'v1' : 'v3';
-
-        applyTheme(newTheme);
-        localStorage.setItem('portfolio-theme', newTheme);
-
-        // Show notification
-        const themeName = newTheme === 'v1' ? 'Dark Glassmorphism' : 'Light Corporate';
-        showNotification(`Thème changé: ${themeName}`, 'success');
-    });
-
-    function applyTheme(theme) {
-        const cssFile = theme === 'v1' ? 'styles-v1-glassmorphism.css' : 'styles.css';
-        styleLink.setAttribute('href', cssFile);
-
-        // Update button text/icon
-        themeSwitcher.innerHTML = theme === 'v1'
-            ? '☀️ <span class="theme-text">Light</span>'
-            : '🌙 <span class="theme-text">Dark</span>';
-
-        // Add transition class
-        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-    }
-}
-
 // === Project Modal System ===
 function initProjectModal() {
     const modal = document.getElementById('projectModal');
@@ -113,6 +148,39 @@ function initProjectModal() {
 
     // Project data with full details
     const projectsData = {
+        'ctrlpoint': {
+            id: 'ctrlpoint',
+            icon: '⚡',
+            badge: 'En construction',
+            title: 'CtrlPoint - Gestion de projets GTB',
+            period: '2025 - En cours',
+            client: 'Projet SaaS',
+            category: ['dev', 'gtb', 'iot'],
+            excerpt: 'Créez, organisez et exportez vos listes de points pour vos projets de Gestion Technique du Bâtiment.',
+            description: `
+                <p>CtrlPoint est une plateforme SaaS moderne conçue pour simplifier la gestion des projets GTB.</p>
+                <p>Elle permet de créer, d'organiser et d'exporter des listes de points de manière collaborative, remplaçant les fichiers Excel complexes et propices aux erreurs.</p>
+                <p><strong><a href="https://www.ctrlpoint.eu" target="_blank" style="color: var(--primary); text-decoration: underline;">Visiter le site : available soon @ ctrlpoint.eu</a></strong></p>
+            `,
+            objectives: [
+                'Simplifier la création de listes de points',
+                'Permettre la collaboration en temps réel',
+                'Standardiser les exports pour les automates',
+                'Gagner du temps sur la phase de conception'
+            ],
+            technologies: [
+                { name: 'React / Next.js', icon: '⚛️' },
+                { name: 'TypeScript', icon: '📘' },
+                { name: 'TailwindCSS', icon: '🎨' },
+                { name: 'Supabase', icon: '🔥' }
+            ],
+            results: [
+                'Gain de temps estimé : 40% sur la saisie',
+                'Standardisation des données',
+                'Zero erreur de versionning'
+            ],
+            challenges: 'Création d\'une interface UX intuitive pour des données techniques complexes'
+        },
         1: {
             id: 1,
             icon: '🌐',
@@ -442,7 +510,7 @@ function initProjectModal() {
     viewButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            const card = button.closest('.project-card-compact');
+            const card = button.closest('.project-card');
             const projectId = parseInt(card.getAttribute('data-project-id'));
             openModal(projectId);
         });
@@ -470,11 +538,11 @@ function initProjectModal() {
 // === Project Filters with Animation ===
 function initProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card-compact');
+    const projectCards = document.querySelectorAll('.project-card');
 
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const filter = this.getAttribute('data-filter');
 
                 // Update active button
@@ -514,27 +582,47 @@ function initContactForm() {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Loading state
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Envoi en cours...';
+            submitBtn.disabled = true;
+
             // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company')?.value,
-                phone: document.getElementById('phone')?.value,
-                projectType: document.getElementById('project-type')?.value,
-                budget: document.getElementById('budget')?.value,
-                message: document.getElementById('message').value
-            };
+            const formData = new FormData(contactForm);
 
-            console.log('Form submitted:', formData);
+            try {
+                // Replace with your actual Formspree ID or backend endpoint
+                const response = await fetch('https://formspree.io/f/xbldwgwq', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Show success message with animation
-            showNotification('Message envoyé avec succès ! Je vous répondrai rapidement.', 'success');
-
-            // Reset form
-            contactForm.reset();
+                if (response.ok) {
+                    showNotification('Message envoyé avec succès ! Je vous répondrai rapidement.', 'success');
+                    contactForm.reset();
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        showNotification(data["errors"].map(error => error["message"]).join(", "), 'error');
+                    } else {
+                        showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
+                    }
+                }
+            } catch (error) {
+                showNotification('Erreur de connexion. Veuillez vérifier votre réseau.', 'error');
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 }
@@ -543,35 +631,41 @@ function initContactForm() {
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                // Unobserve after animation
+                entry.target.classList.remove('reveal-hidden');
+                entry.target.classList.add('reveal-visible');
+                // Unobserve after animation (optional, keep if you want it once)
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe elements
+    // Initial setup: Add hidden class to elements
     const elementsToAnimate = document.querySelectorAll(`
         .service-card,
         .skill-card,
-        .project-card-large,
-        .specialty-item,
+        .project-card,
         .stat-card,
         .timeline-item,
-        .expertise-item,
-        .faq-item
+        .about-text,
+        .section-header,
+        .cta-content
     `);
 
-    elementsToAnimate.forEach(el => {
+    elementsToAnimate.forEach((el, index) => {
+        el.classList.add('reveal-hidden');
+        // Add minimal delay staggering based on index or position
+        // This is a simple stagger, reusing CSS delay classes if available or inline
+        // el.style.transitionDelay = `${(index % 5) * 0.1}s`; 
         observer.observe(el);
     });
 }
+
 
 // === Particles Background Effect ===
 function initParticlesBackground() {
@@ -616,7 +710,7 @@ function initParticlesBackground() {
         }
 
         draw() {
-            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
+            ctx.fillStyle = `rgba(0, 243, 255, ${this.opacity})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -635,7 +729,7 @@ function initParticlesBackground() {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < 150) {
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - distance / 150)})`;
+                    ctx.strokeStyle = `rgba(0, 243, 255, ${0.15 * (1 - distance / 150)})`;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
@@ -672,31 +766,31 @@ function initCursorEffect() {
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
     cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px solid #6366f1;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.15s ease, opacity 0.15s ease;
-        opacity: 0;
-    `;
+position: fixed;
+width: 20px;
+height: 20px;
+border - radius: 50 %;
+border: 2px solid #00f3ff;
+pointer - events: none;
+z - index: 9999;
+transition: transform 0.15s ease, opacity 0.15s ease;
+opacity: 0;
+`;
     document.body.appendChild(cursor);
 
     const cursorDot = document.createElement('div');
     cursorDot.className = 'custom-cursor-dot';
     cursorDot.style.cssText = `
-        position: fixed;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #6366f1;
-        pointer-events: none;
-        z-index: 10000;
-        transition: transform 0.05s ease;
-        opacity: 0;
-    `;
+position: fixed;
+width: 6px;
+height: 6px;
+border - radius: 50 %;
+background: #00f3ff;
+pointer - events: none;
+z - index: 10000;
+transition: transform 0.05s ease;
+opacity: 0;
+`;
     document.body.appendChild(cursorDot);
 
     let mouseX = 0;
@@ -753,20 +847,20 @@ function initCursorEffect() {
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${type === 'success' ? 'linear-gradient(135deg, #14b8a6, #10b981)' : 'linear-gradient(135deg, #ef4444, #dc2626)'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        font-weight: 600;
-        opacity: 0;
-        transform: translateX(400px);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    `;
+position: fixed;
+top: 100px;
+right: 20px;
+background: ${type === 'success' ? 'linear-gradient(135deg, #14b8a6, #10b981)' : 'linear-gradient(135deg, #ef4444, #dc2626)'};
+color: white;
+padding: 1rem 1.5rem;
+border - radius: 12px;
+box - shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+z - index: 10000;
+font - weight: 600;
+opacity: 0;
+transform: translateX(400px);
+transition: all 0.4s cubic - bezier(0.4, 0, 0.2, 1);
+`;
     notification.textContent = message;
     document.body.appendChild(notification);
 
@@ -789,7 +883,7 @@ function showNotification(message, type = 'success') {
 // === Smooth Scroll for Anchor Links ===
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 anchorLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
 
@@ -836,19 +930,19 @@ setTimeout(initTiltEffect, 1000);
 // === Add fade-in-up animation to elements ===
 const style = document.createElement('style');
 style.innerHTML = `
-    @keyframes fadeInUp {
+@keyframes fadeInUp {
         from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
+        opacity: 0;
+        transform: translateY(40px);
+    }
         to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    .fade-in-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
+    .fade -in -up {
+    animation: fadeInUp 0.8s ease - out forwards;
+}
 `;
 document.head.appendChild(style);

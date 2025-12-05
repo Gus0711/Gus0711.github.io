@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,21 @@
     <title>Projets - Portfolio GTB</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">G7 Automation</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Accueil</a></li>
                 <li><a href="skills.html" class="nav-link">Compétences</a></li>
                 <li><a href="projects.html" class="nav-link active">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="theme-switcher" title="Changer de thème">
-                🌙 <span class="theme-text">Dark</span>
-            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -33,10 +32,10 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header" style="padding-top: 120px;">
         <div class="container">
-            <h1>Bibliothèque de Projets</h1>
-            <p>Réalisations techniques en GTB, IoT et automatisme</p>
+            <h1 class="glitch-text" data-text="Bibliothèque de Projets">Bibliothèque de Projets</h1>
+            <p style="margin-top: 1rem;">Réalisations techniques en GTB, IoT et automatisme</p>
         </div>
     </section>
 
@@ -53,18 +52,37 @@
         </div>
     </section>
 
-    <!-- Projects Grid - Cartes Compactes -->
+    <!-- Projects Grid -->
     <section class="projects-section">
         <div class="container">
-            <div class="projects-grid-compact">
+            <div class="projects-grid">
+
+                <!-- Carte: CtrlPoint -->
+                <article class="project-card" data-category="dev gtb iot" data-project-id="ctrlpoint"
+                    style="border-color: var(--primary); box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);">
+                    <div class="project-icon">⚡</div>
+                    <div class="project-badge">En construction</div>
+                    <h3>CtrlPoint - Gestion de projets GTB</h3>
+                    <p class="project-period">2025 - En cours</p>
+                    <p class="project-excerpt">Créez, organisez et exportez vos listes de points pour vos projets GTB.
+                        Gagnez un temps précieux.</p>
+                    <div class="project-tags">
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Supabase</span>
+                    </div>
+                    <button class="btn-view-project">Voir le projet →</button>
+                    <!-- Small direct link below button if preferred, but button opens modal which has link -->
+                </article>
 
                 <!-- Carte 1: Supervision Mutualisée -->
-                <article class="project-card-compact" data-category="gtb dev iot" data-project-id="1">
+                <article class="project-card" data-category="gtb dev iot" data-project-id="1">
                     <div class="project-icon">🌐</div>
                     <div class="project-badge">En cours</div>
                     <h3>Plateforme de Supervision Mutualisée</h3>
                     <p class="project-period">2023 - En cours</p>
-                    <p class="project-excerpt">Hébergement cloud multi-tenant avec LNS LoRaWAN mutualisé pour clients GTB</p>
+                    <p class="project-excerpt">Hébergement cloud multi-tenant avec LNS LoRaWAN mutualisé pour clients
+                        GTB</p>
                     <div class="project-tags">
                         <span class="tag">GTB</span>
                         <span class="tag">IoT</span>
@@ -74,12 +92,13 @@
                 </article>
 
                 <!-- Carte 2: Marché Public Aisne -->
-                <article class="project-card-compact" data-category="marche-public gtb" data-project-id="2">
+                <article class="project-card" data-category="marche-public gtb" data-project-id="2">
                     <div class="project-icon">🏛️</div>
                     <div class="project-badge">En cours</div>
                     <h3>Marché Public Aisne</h3>
                     <p class="project-period">2024 - 2026</p>
-                    <p class="project-excerpt">Régulation multi-communes avec chaufferies, comptage et automatisation</p>
+                    <p class="project-excerpt">Régulation multi-communes avec chaufferies, comptage et automatisation
+                    </p>
                     <div class="project-tags">
                         <span class="tag">Marché Public</span>
                         <span class="tag">Régulation</span>
@@ -88,12 +107,13 @@
                 </article>
 
                 <!-- Carte 3: 5 Hôpitaux -->
-                <article class="project-card-compact" data-category="gtb iot" data-project-id="3">
+                <article class="project-card" data-category="gtb iot" data-project-id="3">
                     <div class="project-icon">🏥</div>
                     <div class="project-badge">En cours</div>
                     <h3>Supervision 5 Hôpitaux</h3>
                     <p class="project-period">2023 - 2025</p>
-                    <p class="project-excerpt">Hyperviseur centralisé avec 5 supervisions personnalisées et réseau LoRa</p>
+                    <p class="project-excerpt">Hyperviseur centralisé avec 5 supervisions personnalisées et réseau LoRa
+                    </p>
                     <div class="project-tags">
                         <span class="tag">Multi-sites</span>
                         <span class="tag">LoRaWAN</span>
@@ -102,12 +122,13 @@
                 </article>
 
                 <!-- Carte 4: 500 Vannes LoRa -->
-                <article class="project-card-compact" data-category="iot gtb" data-project-id="4">
+                <article class="project-card" data-category="iot gtb" data-project-id="4">
                     <div class="project-icon">🏥</div>
                     <div class="project-badge">Terminé</div>
                     <h3>500 Vannes Thermostatiques LoRa</h3>
                     <p class="project-period">2023</p>
-                    <p class="project-excerpt">Déploiement massif de vannes connectées avec LNS dédié dans un hôpital</p>
+                    <p class="project-excerpt">Déploiement massif de vannes connectées avec LNS dédié dans un hôpital
+                    </p>
                     <div class="project-tags">
                         <span class="tag">IoT</span>
                         <span class="tag">LoRaWAN</span>
@@ -116,12 +137,13 @@
                 </article>
 
                 <!-- Carte 5: Éclairage Public -->
-                <article class="project-card-compact" data-category="gtb marche-public" data-project-id="5">
+                <article class="project-card" data-category="gtb marche-public" data-project-id="5">
                     <div class="project-icon">💡</div>
                     <div class="project-badge">Terminé</div>
                     <h3>3600+ Automates Éclairage Public</h3>
                     <p class="project-period">2021 - 2023</p>
-                    <p class="project-excerpt">Modernisation complète avec supervision et coordination de 7 sous-traitants</p>
+                    <p class="project-excerpt">Modernisation complète avec supervision et coordination de 7
+                        sous-traitants</p>
                     <div class="project-tags">
                         <span class="tag">Marché Public</span>
                         <span class="tag">GTB</span>
@@ -130,7 +152,7 @@
                 </article>
 
                 <!-- Carte 6: IoT Sans Fil -->
-                <article class="project-card-compact" data-category="iot dev" data-project-id="6">
+                <article class="project-card" data-category="iot dev" data-project-id="6">
                     <div class="project-icon">📡</div>
                     <div class="project-badge">Terminé</div>
                     <h3>Solutions IoT Sans Fil</h3>
@@ -144,12 +166,13 @@
                 </article>
 
                 <!-- Carte 7: Programmation Automates -->
-                <article class="project-card-compact" data-category="gtb" data-project-id="7">
+                <article class="project-card" data-category="gtb" data-project-id="7">
                     <div class="project-icon">⚙️</div>
                     <div class="project-badge">Terminé</div>
                     <h3>Programmation Automates CVC</h3>
                     <p class="project-period">2016 - 2022</p>
-                    <p class="project-excerpt">Intégration multi-marques avec mise en service et développement supervision</p>
+                    <p class="project-excerpt">Intégration multi-marques avec mise en service et développement
+                        supervision</p>
                     <div class="project-tags">
                         <span class="tag">Automatisme</span>
                         <span class="tag">CVC</span>
@@ -190,12 +213,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
+    <section class="cta" style="margin-bottom: 0; border-top: 1px solid var(--border-light);">
+        <div class="container" style="text-align: center; padding: 4rem 0;">
             <div class="cta-content">
-                <h2>Un projet similaire ?</h2>
-                <p>Discutons de votre besoin et des solutions que je peux vous apporter</p>
-                <a href="contact.html" class="btn btn-light">Démarrer un projet</a>
+                <h2 style="margin-bottom: 1rem;">Un projet similaire ?</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">Discutons de votre besoin et des solutions que
+                    je peux vous apporter</p>
+                <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
             </div>
         </div>
     </section>
@@ -206,8 +230,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>G7 Automation</h3>
-                    <p>Ingénieur en Gestion Technique du Bâtiment</p>
-                    <p>Spécialiste Automatisme, IoT & Optimisation Énergétique</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Ingénieur en Gestion Technique du Bâtiment.<br>
+                        Spécialiste Automatisme, IoT & Optimisation Énergétique.
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h4>Navigation</h4>
@@ -223,7 +249,7 @@
                     <ul>
                         <li><a href="mailto:contact@example.com">Email</a></li>
                         <li><a href="https://github.com/Gus0711" target="_blank">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/votreprofil" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://linkedin.com/in/octave-l" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -235,4 +261,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
