@@ -1,0 +1,7 @@
+# G7 Automation Portfolio
+# https://gus0711.github.io
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gus0711.github.io/sitemap.xml

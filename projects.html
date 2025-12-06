@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bibliothèque de projets GTB, IoT et automatisme - Réalisations techniques">
-    <title>Projets - Portfolio GTB</title>
+    <meta name="author" content="Augustin Duhant">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gus0711.github.io/projects.html">
+    <meta property="og:title" content="Projets GTB & IoT - G7 Automation">
+    <meta property="og:description" content="Découvrez mes réalisations : 3600+ automates, supervision multi-sites, réseaux LoRaWAN, marchés publics.">
+    <meta property="og:image" content="https://gus0711.github.io/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Projets - G7 Automation</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
@@ -23,16 +41,16 @@
                 <li><a href="projects.html" class="nav-link active">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header" style="padding-top: 120px;">
+    <section id="main-content" class="page-header" style="padding-top: 120px;">
         <div class="container">
             <h1 class="glitch-text" data-text="Bibliothèque de Projets">Bibliothèque de Projets</h1>
             <p style="margin-top: 1rem;">Réalisations techniques en GTB, IoT et automatisme</p>
@@ -259,7 +277,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

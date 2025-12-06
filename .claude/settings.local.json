@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check:*)",
+      "Bash(del \"C:\\Users\\augus\\Documents\\GitHub\\Gus0711.github.io\\app_debug.js\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

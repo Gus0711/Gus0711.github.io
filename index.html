@@ -4,15 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio professionnel - Ingénieur en Gestion Technique du Bâtiment (GTB), spécialisé en automatisme, IoT/LoRaWAN et optimisation énergétique">
+    <meta name="description" content="Portfolio professionnel - Ingénieur en Gestion Technique du Bâtiment (GTB), spécialisé en automatisme, IoT/LoRaWAN et optimisation énergétique">
+    <meta name="author" content="Augustin Duhant">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gus0711.github.io/">
+    <meta property="og:title" content="G7 Automation - GTB & IoT Project Manager">
+    <meta property="og:description" content="Expert en Gestion Technique du Bâtiment, automatisme, IoT/LoRaWAN et optimisation énergétique. 9+ ans d'expérience, 6000+ automates déployés.">
+    <meta property="og:image" content="https://gus0711.github.io/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="G7 Automation - GTB & IoT Project Manager">
+    <meta name="twitter:description" content="Expert en Gestion Technique du Bâtiment, automatisme, IoT/LoRaWAN et optimisation énergétique.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>G7 Automation - GTB & IoT Project Manager</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
@@ -24,16 +46,16 @@
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header id="main-content" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -92,29 +114,16 @@
 
         <div class="about-grid">
             <div class="about-text">
-                <p>
-                    <strong>Responsable de projet automatisation</strong> depuis janvier 2021, je pilote des projets
-                    d'envergure en GTB et IoT.
-                    Mon expertise couvre les marchés publics multi-sites, le déploiement de réseaux LoRaWAN privés, et
-                    la supervision complexe.
-                </p>
-                <div class="founder-note reveal-hidden">
-                    <h4>🚀 Fondateur de <a href="https://www.ctrlpoint.eu" target="_blank"
-                            class="founder-link">CtrlPoint.eu</a></h4>
-                    <p>
-                        La solution SaaS pour <strong>créer, organiser et exporter</strong> vos listes de points GTB.
-                        Simplifiez la gestion de vos projets et gagnez un temps précieux.
-                    </p>
+                <p><strong>Responsable de projet automatisation</strong> depuis janvier 2021, je pilote des projets d'envergure en GTB et IoT. Mon expertise couvre les marchés publics multi-sites, le déploiement de réseaux LoRaWAN privés, et la supervision complexe.</p>
+
+                <p>Aujourd'hui, j'administre une infrastructure <strong>Niagara 4 centralisée et mutualisée</strong>, hébergée sur mes propres serveurs dédiés (OVH). Cette architecture permet à mes clients d'accéder à leurs installations via des interfaces web sécurisées, tandis que je gère l'intégralité du backend : tunneling VPN, maintenance Niagara et développement des supervisions.</p>
+
+                <p>En parallèle, j'assure le suivi et l'optimisation de superviseurs Niagara pour de <strong>grands comptes nationaux</strong> et Groupements Hospitaliers.</p>
+
+                <div class="founder-note">
+                    <h4>🚀 Fondateur de <a href="https://www.ctrlpoint.eu" target="_blank" class="founder-link">CtrlPoint.eu</a></h4>
+                    <p>La solution SaaS pour <strong>créer, organiser et exporter</strong> vos listes de points GTB. Simplifiez la gestion de vos projets et gagnez un temps précieux.</p>
                 </div>
-                <p>
-                    Aujourd'hui, j'administre une infrastructure <strong>Niagara 4 centralisée et mutualisée</strong>,
-                    hébergée sur mes propres serveurs dédiés (OVH).
-                    Cette architecture permet à mes clients d'accéder à leurs installations via des interfaces web
-                    sécurisées, tandis que je gère l'intégralité du backend :
-                    tunneling VPN, maintenance Niagara et développement des supervisions. En parallèle, j'assure le
-                    suivi et l'optimisation de superviseurs Niagara
-                    pour de <strong>grands comptes nationaux</strong> et Groupements Hospitaliers.
-                </p>
 
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -380,7 +389,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

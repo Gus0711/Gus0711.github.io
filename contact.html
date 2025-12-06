@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact - Ingénieur GTB disponible pour projets et consulting">
+    <meta name="author" content="Augustin Duhant">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gus0711.github.io/contact.html">
+    <meta property="og:title" content="Contact - G7 Automation">
+    <meta property="og:description" content="Disponible pour missions de consulting, audit ou développement sur-mesure en GTB et IoT.">
+    <meta property="og:image" content="https://gus0711.github.io/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Contact - G7 Automation</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
@@ -23,84 +41,70 @@
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container" style="padding-top: 150px; padding-bottom: 50px;">
-        <div class="about-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
-
+    <section id="main-content" class="container contact-section">
+        <div class="contact-grid">
             <!-- Information -->
-            <div class="about-text">
+            <div>
                 <div class="section-header">
                     <h1 class="section-title">Me Contacter</h1>
                     <p class="section-subtitle">Initialiser la communication</p>
                 </div>
 
-                <p style="margin-bottom: 2rem;">
-                    Disponible pour des missions de consulting, d'audit ou de développement sur-mesure.
-                    N'hésitez pas à me présenter votre projet.
-                </p>
+                <p>Disponible pour des missions de consulting, d'audit ou de développement sur-mesure. N'hésitez pas à me présenter votre projet.</p>
 
-                <div class="stats-grid" style="grid-template-columns: 1fr;">
-                    <a href="mailto:augustin.duhant@gmail.com" class="stat-card"
-                        style="text-decoration: none; display: flex; align-items: center; gap: 1rem; padding: 1.5rem;">
-                        <span style="font-size: 2rem;">📧</span>
+                <div class="contact-links">
+                    <a href="mailto:augustin.duhant@gmail.com" class="contact-card">
+                        <span class="contact-card-icon">📧</span>
                         <div>
-                            <span class="stat-label">Email</span>
-                            <span class="stat-number" style="font-size: 1.2rem;">augustin.duhant@gmail.com</span>
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">augustin.duhant@gmail.com</span>
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/augustin-duhant-986a89a3/" target="_blank" class="stat-card"
-                        style="text-decoration: none; display: flex; align-items: center; gap: 1rem; padding: 1.5rem;">
-                        <span style="font-size: 2rem;">💼</span>
+                    <a href="https://www.linkedin.com/in/augustin-duhant-986a89a3/" target="_blank" class="contact-card">
+                        <span class="contact-card-icon">💼</span>
                         <div>
-                            <span class="stat-label">LinkedIn</span>
-                            <span class="stat-number" style="font-size: 1.2rem;">Connectons-nous</span>
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-value">Connectons-nous</span>
                         </div>
                     </a>
 
-                    <a href="https://github.com/Gus0711" target="_blank" class="stat-card"
-                        style="text-decoration: none; display: flex; align-items: center; gap: 1rem; padding: 1.5rem;">
-                        <span style="font-size: 2rem;">💻</span>
+                    <a href="https://github.com/Gus0711" target="_blank" class="contact-card">
+                        <span class="contact-card-icon">💻</span>
                         <div>
-                            <span class="stat-label">GitHub</span>
-                            <span class="stat-number" style="font-size: 1.2rem;">Code & Projets</span>
+                            <span class="contact-card-label">GitHub</span>
+                            <span class="contact-card-value">Code & Projets</span>
                         </div>
                     </a>
                 </div>
             </div>
 
             <!-- Form -->
-            <div class="timeline-content"
-                style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 2rem; border-radius: var(--radius-lg);">
-                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Formulaire de Contact</h3>
-                <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="name"
-                            style="margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.9rem;">Nom</label>
-                        <input type="text" id="name" name="name" required
-                            style="padding: 0.8rem; background: var(--bg-dark); border: 1px solid var(--border-light); color: var(--text-main); border-radius: var(--radius-sm);">
+            <div class="contact-form-container">
+                <h3>Formulaire de Contact</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
                     </div>
 
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="email"
-                            style="margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.9rem;">Email</label>
-                        <input type="email" id="email" name="email" required
-                            style="padding: 0.8rem; background: var(--bg-dark); border: 1px solid var(--border-light); color: var(--text-main); border-radius: var(--radius-sm);">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
                     </div>
 
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="subject"
-                            style="margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.9rem;">Sujet</label>
-                        <select id="subject" name="subject"
-                            style="padding: 0.8rem; background: var(--bg-dark); border: 1px solid var(--border-light); color: var(--text-main); border-radius: var(--radius-sm);">
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject">
                             <option value="projet">Nouveau Projet</option>
                             <option value="consulting">Consulting / Audit</option>
                             <option value="dev">Développement Sur-mesure</option>
@@ -108,19 +112,16 @@
                         </select>
                     </div>
 
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="message"
-                            style="margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.9rem;">Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                            style="padding: 0.8rem; background: var(--bg-dark); border: 1px solid var(--border-light); color: var(--text-main); border-radius: var(--radius-sm); resize: vertical;"></textarea>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Envoyer le
-                        Message</button>
+                    <button type="submit" class="btn btn-primary">Envoyer le Message</button>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -157,7 +158,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

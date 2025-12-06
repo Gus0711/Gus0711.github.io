@@ -5,13 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Compétences techniques en GTB, IoT/LoRaWAN, automatisme et développement">
+    <meta name="author" content="Augustin Duhant">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gus0711.github.io/skills.html">
+    <meta property="og:title" content="Compétences GTB & IoT - G7 Automation">
+    <meta property="og:description"
+        content="Expertise en Niagara N4, LoRaWAN, BACnet, Modbus, Docker, et développement sur-mesure.">
+    <meta property="og:image" content="https://gus0711.github.io/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Compétences - G7 Automation</title>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="container nav-container">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
@@ -23,16 +42,17 @@
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Page Header (Simplified Hero) -->
-    <header class="hero" style="min-height: 40vh; align-items: center; justify-content: center; padding-top: 100px;">
+    <header id="main-content" class="hero"
+        style="min-height: 40vh; align-items: center; justify-content: center; padding-top: 100px;">
         <div class="container hero-container" style="flex-direction: column; text-align: center;">
             <div class="hero-text" style="max-width: 800px;">
                 <h1 class="hero-title glitch-text" data-text="COMPÉTENCES & EXPERTISE">COMPÉTENCES & EXPERTISE</h1>
@@ -145,6 +165,52 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <div class="section-header">
+                <h2 class="section-title">Certifications & Formation</h2>
+                <p class="section-subtitle">Expertise validée</p>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">🎓</div>
+                    <div class="cert-content">
+                        <h4>Niagara N4 Certified</h4>
+                        <p>Tridium / Honeywell</p>
+                        <span class="cert-year">Certification active</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">📡</div>
+                    <div class="cert-content">
+                        <h4>LoRaWAN Fundamentals</h4>
+                        <p>TTN / Chirpstack / Requea</p>
+                        <span class="cert-year">Formation continue</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">🏢</div>
+                    <div class="cert-content">
+                        <h4>Distech Controls EC-Net 4</h4>
+                        <p>Programmation & Integration</p>
+                        <span class="cert-year">Certification constructeur</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">⚡</div>
+                    <div class="cert-content">
+                        <h4>Trend BEMS</h4>
+                        <p>IQ Vision & 963 Supervisor</p>
+                        <span class="cert-year">Certification constructeur</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <!-- CTA Section -->
@@ -195,7 +261,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
