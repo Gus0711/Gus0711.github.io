@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initParticlesBackground();
     initCursorEffect();
-    initTerminalEffect();
+    initTypewriter();
+    initSkillsChart();
     initButtonEffects();
     initTiltEffect();
     initBackToTop();
@@ -49,30 +50,49 @@ function initButtonEffects() {
     });
 }
 
-// === Terminal Typing Effect ===
-function initTerminalEffect() {
-    const terminalBody = document.getElementById('hero-terminal');
-    if (!terminalBody) return;
+// === Typewriter Effect ===
+function initTypewriter() {
+    const textElement = document.querySelector('.typewriter-text');
+    if (!textElement) return;
 
-    const lines = terminalBody.querySelectorAll('.code-line:not(:last-child)');
-    const lastLine = terminalBody.querySelector('.code-line:last-child');
+    const roles = [
+        "Ingenieur GTB & BMS",
+        "Developpeur IoT & LoRaWAN",
+        "Architecte Cloud & SaaS",
+        "Expert Optimisation Energetique"
+    ];
 
-    lines.forEach(line => line.style.display = 'none');
-    if (lastLine) lastLine.style.display = 'none';
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
 
-    let currentLine = 0;
+    function type() {
+        const currentRole = roles[roleIndex];
 
-    function showNextLine() {
-        if (currentLine < lines.length) {
-            lines[currentLine].style.display = 'block';
-            currentLine++;
-            setTimeout(showNextLine, 400 + Math.random() * 400);
+        if (isDeleting) {
+            textElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 50; // Faster deleting
         } else {
-            if (lastLine) lastLine.style.display = 'block';
+            textElement.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 100; // Normal typing
         }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            typeSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500; // Pause before next word
+        }
+
+        setTimeout(type, typeSpeed);
     }
 
-    setTimeout(showNextLine, 1000);
+    type();
 }
 
 // === Navbar Scroll Effect ===
@@ -799,24 +819,96 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // === Back to Top Button ===
 function initBackToTop() {
-    // Create button
-    const btn = document.createElement('button');
-    btn.className = 'back-to-top';
-    btn.innerHTML = '↑';
-    btn.setAttribute('aria-label', 'Retour en haut');
-    document.body.appendChild(btn);
+    const backToTopBtn = document.querySelector('.back-to-top');
+    if (!backToTopBtn) return;
 
-    // Show/hide on scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            btn.classList.add('visible');
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
         } else {
-            btn.classList.remove('visible');
+            backToTopBtn.classList.remove('visible');
         }
     });
 
-    // Scroll to top on click
-    btn.addEventListener('click', () => {
+    backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// === Skills Radar Chart ===
+function initSkillsChart() {
+    const ctx = document.getElementById('skillsChart');
+    if (!ctx) return;
+
+    // Wait for Chart.js to load
+    if (typeof Chart === 'undefined') {
+        setTimeout(initSkillsChart, 100);
+        return;
+    }
+
+    // Chart Global Defaults
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = 'rgba(148, 163, 184, 0.1)';
+    Chart.defaults.font.family = "'Fira Code', monospace";
+
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['GTB / BMS', 'IoT / LoRaWAN', 'Dev Web (JS/React)', 'Backend / API', 'DevOps / Cloud', 'Réseau / IT'],
+            datasets: [{
+                label: 'Niveau de Maitrise',
+                data: [95, 90, 85, 80, 75, 85],
+                backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                borderColor: '#06b6d4',
+                pointBackgroundColor: '#06b6d4',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#06b6d4'
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: {
+                        color: 'rgba(148, 163, 184, 0.1)'
+                    },
+                    grid: {
+                        color: 'rgba(148, 163, 184, 0.1)'
+                    },
+                    pointLabels: {
+                        color: '#f8fafc',
+                        font: {
+                            size: 11
+                        }
+                    },
+                    ticks: {
+                        display: false, // Hide 0-100 scale numbers
+                        backdropColor: 'transparent'
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    titleColor: '#06b6d4',
+                    bodyFont: {
+                        family: 'Inter'
+                    },
+                    padding: 12,
+                    borderColor: 'rgba(148, 163, 184, 0.2)',
+                    borderWidth: 1,
+                    displayColors: false
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart'
+            }
+        }
     });
 }

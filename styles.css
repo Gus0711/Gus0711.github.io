@@ -598,6 +598,101 @@ ul {
     box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
 }
 
+/* --- PROJECTS GRID & FILTER --- */
+.projects-filter {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: var(--bg-glass);
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-light);
+    width: fit-content;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn {
+    appearance: none;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    padding: 0.6rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: var(--bg-dark);
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple 0.6s ease-out forwards;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* --- TYPEWRITER & ANIMATIONS --- */
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- CHART (SKILLS) --- */
+.chart-container {
+    position: relative;
+    z-index: 10;
+}
+
 .btn-primary:hover {
     background: #0891b2;
     /* Cyan 600 */

@@ -29,6 +29,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <title>Compétences - G7 Automation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css" id="theme-style">
 </head>
 
@@ -72,6 +73,8 @@
 
     <!-- Skills Main Container -->
     <div class="container" style="padding-bottom: 4rem;">
+
+
 
         <!-- GTB / Supervision -->
         <section class="skill-category" style="margin-bottom: 4rem;">
@@ -171,6 +174,22 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Tech Dashboard (Radar Chart) -->
+        <section class="tech-dashboard glass-panel"
+            style="margin-bottom: 6rem; padding: 3rem 2rem; border-radius: 20px; border: 1px solid var(--border-light);">
+            <div class="section-header" style="margin-bottom: 2rem; text-align: center;">
+                <h2 class="section-title" style="justify-content: center;"><span class="cyan">04.</span> TECH_RADAR</h2>
+                <div class="section-line" style="margin: 1rem auto; max-width: 100px;"></div>
+            </div>
+            <div class="chart-container"
+                style="position: relative; height: 400px; width: 100%; max-width: 700px; margin: 0 auto;">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <p class="mono" style="text-align: center; margin-top: 2rem; color: var(--text-dim); font-size: 0.85rem;">
+                > ANALYSE_MULTIDIMENSIONNELLE_DU_PROFIL
+            </p>
         </section>
 
         <!-- Certifications Section -->
