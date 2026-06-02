@@ -11,44 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initProjectModal();
     initContactForm();
     initScrollAnimations();
-    initParticlesBackground();
-    initCursorEffect();
     initTypewriter();
     initSkillsChart();
-    initButtonEffects();
-    initTiltEffect();
     initBackToTop();
 });
-
-// === Button Effects (Glitch & Magnetic) ===
-function initButtonEffects() {
-    const buttons = document.querySelectorAll('.btn');
-
-    buttons.forEach(btn => {
-        if (btn.classList.contains('btn-primary')) {
-            if (!btn.querySelector('.btn-glitch')) {
-                const glitchSpan = document.createElement('span');
-                glitchSpan.className = 'btn-glitch';
-                btn.appendChild(glitchSpan);
-            }
-        }
-
-        btn.addEventListener('mousemove', function (e) {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const deltaX = (x - centerX) / 8;
-            const deltaY = (y - centerY) / 8;
-            this.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
-        });
-
-        btn.addEventListener('mouseleave', function () {
-            this.style.transform = '';
-        });
-    });
-}
 
 // === Typewriter Effect ===
 function initTypewriter() {
@@ -126,6 +92,7 @@ function initMobileMenu() {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -133,6 +100,7 @@ function initMobileMenu() {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }
@@ -163,7 +131,7 @@ function initProjectModal() {
             description: `
                 <p>CtrlPoint est une plateforme SaaS moderne concue pour simplifier la gestion des projets GTB.</p>
                 <p>Elle permet de creer, d'organiser et d'exporter des listes de points de maniere collaborative, remplacant les fichiers Excel complexes et propices aux erreurs.</p>
-                <p><strong><a href="https://www.ctrlpoint.eu" target="_blank" style="color: var(--primary); text-decoration: underline;">Visiter le site : ctrlpoint.eu</a></strong></p>
+                <p><strong><a href="https://www.ctrlpoint.eu" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Visiter le site : ctrlpoint.eu</a></strong></p>
             `,
             objectives: [
                 'Simplifier la creation de listes de points',
@@ -470,12 +438,14 @@ function initProjectModal() {
 
         modalContent.innerHTML = modalHTML;
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 
     // Close modal
     function closeModal() {
         modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         currentProjectId = null;
     }
@@ -631,146 +601,6 @@ function initScrollAnimations() {
     });
 }
 
-// === Particles Background ===
-function initParticlesBackground() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const canvas = document.createElement('canvas');
-    canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
-    hero.insertBefore(canvas, hero.firstChild);
-
-    const ctx = canvas.getContext('2d');
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-
-    const particles = [];
-    const particleCount = 50;
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 1;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.2;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
-        }
-        draw() {
-            ctx.fillStyle = `rgba(6, 182, 212, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => { p.update(); p.draw(); });
-
-        // Connect particles
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 150)})`;
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-        canvas.width = hero.offsetWidth;
-        canvas.height = hero.offsetHeight;
-    });
-}
-
-// === Custom Cursor ===
-function initCursorEffect() {
-    if (window.innerWidth <= 768) return;
-
-    const cursor = document.createElement('div');
-    cursor.style.cssText = 'position:fixed;width:20px;height:20px;border-radius:50%;border:2px solid #06b6d4;pointer-events:none;z-index:9999;transition:transform 0.15s ease;opacity:0;';
-    document.body.appendChild(cursor);
-
-    const cursorDot = document.createElement('div');
-    cursorDot.style.cssText = 'position:fixed;width:6px;height:6px;border-radius:50%;background:#06b6d4;pointer-events:none;z-index:10000;opacity:0;';
-    document.body.appendChild(cursorDot);
-
-    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.left = mouseX - 3 + 'px';
-        cursorDot.style.top = mouseY - 3 + 'px';
-        cursorDot.style.opacity = '1';
-        cursor.style.opacity = '1';
-    });
-
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * 0.1;
-        cursorY += (mouseY - cursorY) * 0.1;
-        cursor.style.left = cursorX - 10 + 'px';
-        cursor.style.top = cursorY - 10 + 'px';
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    document.querySelectorAll('a, button, .btn, .filter-btn, .nav-link, .project-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.borderColor = '#14b8a6';
-            cursorDot.style.background = '#14b8a6';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.borderColor = '#06b6d4';
-            cursorDot.style.background = '#06b6d4';
-        });
-    });
-}
-
-// === Tilt Effect ===
-function initTiltEffect() {
-    const cards = document.querySelectorAll('.service-card, .skill-card, .stat-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const rotateX = (y - rect.height / 2) / 10;
-            const rotateY = (rect.width / 2 - x) / 10;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        });
-    });
-}
-
 // === Notification System ===
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
@@ -846,10 +676,16 @@ function initSkillsChart() {
         return;
     }
 
+    const styles = getComputedStyle(document.documentElement);
+    const primary = styles.getPropertyValue('--primary').trim() || '#0f766e';
+    const textMain = styles.getPropertyValue('--text-main').trim() || '#172033';
+    const textMuted = styles.getPropertyValue('--text-muted').trim() || '#5d6879';
+    const line = styles.getPropertyValue('--line').trim() || 'rgba(23, 32, 51, 0.12)';
+
     // Chart Global Defaults
-    Chart.defaults.color = '#94a3b8';
-    Chart.defaults.borderColor = 'rgba(148, 163, 184, 0.1)';
-    Chart.defaults.font.family = "'Fira Code', monospace";
+    Chart.defaults.color = textMuted;
+    Chart.defaults.borderColor = line;
+    Chart.defaults.font.family = "'Inter', 'Segoe UI', sans-serif";
 
     new Chart(ctx, {
         type: 'radar',
@@ -858,25 +694,25 @@ function initSkillsChart() {
             datasets: [{
                 label: 'Niveau de Maitrise',
                 data: [95, 90, 85, 80, 75, 85],
-                backgroundColor: 'rgba(6, 182, 212, 0.2)',
-                borderColor: '#06b6d4',
-                pointBackgroundColor: '#06b6d4',
+                backgroundColor: 'rgba(15, 118, 110, 0.14)',
+                borderColor: primary,
+                pointBackgroundColor: primary,
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: '#06b6d4'
+                pointHoverBorderColor: primary
             }]
         },
         options: {
             scales: {
                 r: {
                     angleLines: {
-                        color: 'rgba(148, 163, 184, 0.1)'
+                        color: line
                     },
                     grid: {
-                        color: 'rgba(148, 163, 184, 0.1)'
+                        color: line
                     },
                     pointLabels: {
-                        color: '#f8fafc',
+                        color: textMain,
                         font: {
                             size: 11
                         }
@@ -894,8 +730,8 @@ function initSkillsChart() {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                    titleColor: '#06b6d4',
+                    backgroundColor: 'rgba(23, 32, 51, 0.96)',
+                    titleColor: '#ffffff',
                     bodyFont: {
                         family: 'Inter'
                     },
