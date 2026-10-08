@@ -26,7 +26,7 @@ function initTypewriter() {
     if (!textElement) return;
 
     const roles = [
-        "Responsable de projet GTB & IoT",
+        "Responsable de projet automatisation",
         "Developpeur IoT & LoRaWAN",
         "Createur d'OpenGTB",
         "Expert Optimisation Energetique"
@@ -184,7 +184,7 @@ function initProjectModal() {
             ],
             results: [
                 '15+ clients heberges simultanement',
-                '60+ sites supervises',
+                '80+ sites supervises',
                 'Reduction des couts infrastructure'
             ],
             challenges: 'Gestion de la securite multi-tenant, orchestration des conteneurs, monitoring centralise, scalabilite horizontale'
@@ -237,7 +237,7 @@ function initProjectModal() {
                 'Integrer capteurs IoT pour qualite d\'air et confort'
             ],
             technologies: [
-                { name: 'Niagara N4', icon: '🏢' },
+                { name: 'Niagara 4', icon: '🏢' },
                 { name: 'LoRaWAN Gateway', icon: '📡' },
                 { name: 'ChirpStack', icon: '🔧' },
                 { name: 'Capteurs IoT', icon: '📊' },
@@ -278,7 +278,7 @@ function initProjectModal() {
             results: [
                 '500 vannes installees et commissionnees',
                 'Couverture LoRa 100% du site',
-                'Reduction consommation chauffage: 25%',
+                '27% d\'economie des la 1re annee',
                 'Temps d\'intervention reduit de 80%'
             ],
             challenges: 'Etude de couverture radio complexe, commissioning massif, integration protocoles, gestion des batteries'
@@ -307,6 +307,7 @@ function initProjectModal() {
                 { name: 'Cartographie GIS', icon: '🗺️' }
             ],
             results: [
+                'Marche de plus de 4,5 M EUR',
                 '3600+ automates remplaces',
                 '100% du reseau supervise',
                 'Economie energetique: 40%',
@@ -318,7 +319,7 @@ function initProjectModal() {
             icon: '📡',
             badge: 'Termine',
             title: 'Solutions IoT Sans Fil',
-            period: '2016 - 2022',
+            period: '2016 - 2021',
             client: 'Divers clients tertiaires',
             excerpt: 'Developpement et integration de capteurs environnementaux sans fil',
             description: `
@@ -350,7 +351,7 @@ function initProjectModal() {
             icon: '⚙️',
             badge: 'Termine',
             title: 'Programmation Automates CVC',
-            period: '2016 - 2022',
+            period: '2016 - 2021',
             client: 'Divers clients',
             excerpt: 'Integration multi-marques avec mise en service et developpement supervision',
             description: `

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a GitHub Pages portfolio website (Gus0711.github.io) - a professional portfolio for a GTB (Building Management System) engineer with 9+ years of experience. The site showcases real projects from 2016-2024 including public lighting modernization (3600+ points), hospital supervision with 500 LoRa valves, and public contracts.
+This is a GitHub Pages portfolio website (Gus0711.github.io) - a professional portfolio for a GTB (Building Management System) engineer with 10 years of experience in BMS (since 2016). The site showcases real projects from 2016-2024 including public lighting modernization (3600+ points), hospital supervision with 500 LoRa valves, and public contracts.
 
 ## Architecture
 
@@ -30,8 +30,8 @@ This is a GitHub Pages portfolio website (Gus0711.github.io) - a professional po
 2. Hospital CVC Supervision (2023) - 500 LoRa thermostatic valves
 3. Multi-tenant Supervision Platform (2023) - SaaS for clients
 4. Public Contracts Aisne & 4 Hospitals (2024) - Niagara hypervisor + LNS LoRa
-5. Wireless IoT Solutions (2016-2022) - Temperature, COV sensors
-6. PLC Programming & Commissioning (2016-2022) - Trend, Distech, Siemens
+5. Wireless IoT Solutions (2016-2021) - Temperature, COV sensors
+6. PLC Programming & Commissioning (2016-2021) - Trend, Distech, Siemens
 
 **Technologies Featured**: Niagara N4, Distech Controls, Trend, Siemens, LoRaWAN, MQTT, BACnet, Modbus, Proxmox, Docker, Home Assistant
 

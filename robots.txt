@@ -1,7 +1,7 @@
 # Portfolio Augustin Duhant
-# https://gus0711.github.io
+# https://augustin.opengtb.com
 
 User-agent: *
 Allow: /
 
-Sitemap: https://gus0711.github.io/sitemap.xml
+Sitemap: https://augustin.opengtb.com/sitemap.xml
