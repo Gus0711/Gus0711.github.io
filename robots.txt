@@ -1,4 +1,4 @@
-# G7 Automation Portfolio
+# Portfolio Augustin Duhant
 # https://gus0711.github.io
 
 User-agent: *

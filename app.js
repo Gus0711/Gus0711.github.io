@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initTypewriter();
     initSkillsChart();
     initBackToTop();
+
+    document.querySelectorAll('.current-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
 });
 
 // === Typewriter Effect ===
@@ -22,9 +26,9 @@ function initTypewriter() {
     if (!textElement) return;
 
     const roles = [
-        "Ingenieur GTB & BMS",
+        "Responsable de projet GTB & IoT",
         "Developpeur IoT & LoRaWAN",
-        "Architecte Cloud & SaaS",
+        "Createur d'OpenGTB",
         "Expert Optimisation Energetique"
     ];
 
@@ -122,35 +126,37 @@ function initProjectModal() {
     // Project data
     const projectsData = {
         0: {
-            icon: '⚡',
-            badge: 'En construction',
-            title: 'CtrlPoint - Gestion de projets GTB',
-            period: '2025 - En cours',
-            client: 'Projet SaaS',
-            excerpt: 'Creez, organisez et exportez vos listes de points pour vos projets de Gestion Technique du Batiment.',
+            icon: '🧰',
+            badge: 'En ligne',
+            title: 'OpenGTB - Boite a outils GTB open source',
+            period: '2026 - En cours',
+            client: 'Projet open source',
+            excerpt: 'Decoder, calculer, verifier. Sans installer, sans s\'inscrire.',
             description: `
-                <p>CtrlPoint est une plateforme SaaS moderne concue pour simplifier la gestion des projets GTB.</p>
-                <p>Elle permet de creer, d'organiser et d'exporter des listes de points de maniere collaborative, remplacant les fichiers Excel complexes et propices aux erreurs.</p>
-                <p><strong><a href="https://www.ctrlpoint.eu" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Visiter le site : ctrlpoint.eu</a></strong></p>
+                <p>OpenGTB est une boite a outils open source (licence MIT) pour les integrateurs GTB et IoT, hebergee en France.</p>
+                <p>Tous les outils tournent en local dans le navigateur : sans telemetrie, sans compte, sans tracking. Une partie blog partage des retours d'experience terrain (LoRaWAN, Modbus, VRV, methodes d'integrateur).</p>
+                <p><strong><a href="https://opengtb.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Visiter le site : opengtb.com</a></strong></p>
             `,
             objectives: [
-                'Simplifier la creation de listes de points',
-                'Permettre la collaboration en temps reel',
-                'Standardiser les exports pour les automates',
-                'Gagner du temps sur la phase de conception'
+                'Decoder les trames LoRaWAN, Modbus et captures reseau',
+                'Dimensionner : vannes 3 voies, loi d\'eau, air humide, compteurs thermiques',
+                'Verifier la conformite reglementaire (decret BACS, DJU, IPMVP)',
+                'Faciliter la mise en service et l\'analyse de tendances'
             ],
             technologies: [
-                { name: 'React / Next.js', icon: '⚛️' },
-                { name: 'TypeScript', icon: '📘' },
-                { name: 'TailwindCSS', icon: '🎨' },
-                { name: 'Supabase', icon: '🔥' }
+                { name: 'LoRaWAN / ChirpStack v4', icon: '📡' },
+                { name: 'Modbus RTU/TCP', icon: '🔌' },
+                { name: 'BACnet', icon: '🏢' },
+                { name: 'M-Bus', icon: '🌡️' },
+                { name: '100% navigateur', icon: '🌐' },
+                { name: 'Open source MIT', icon: '🔓' }
             ],
             results: [
-                'Gain de temps estime : 40% sur la saisie',
-                'Standardisation des donnees',
-                'Zero erreur de versionning'
+                'Une quinzaine d\'outils en ligne, repartis en 5 domaines',
+                'Aucune installation ni inscription requise',
+                'Zero tracking, donnees traitees en local'
             ],
-            challenges: 'Creation d\'une interface UX intuitive pour des donnees techniques complexes'
+            challenges: 'Faire tourner des outils techniques complets cote navigateur, sans backend ni collecte de donnees'
         },
         1: {
             icon: '🌐',
@@ -187,7 +193,7 @@ function initProjectModal() {
             icon: '🏛️',
             badge: 'En cours',
             title: 'Marche Public Aisne',
-            period: '2024 - 2026',
+            period: '2024 - En cours',
             client: 'Collectivites territoriales',
             excerpt: 'Regulation multi-communes avec chaufferies, comptage et automatisation',
             description: `
